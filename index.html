@@ -11,27 +11,27 @@
 <style>
 /* ─── 리셋 ─── */
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
+html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 
 /* ─── 디자인 토큰 ─── */
 :root{
-  --bg:        #060E1F;
-  --bg-slide:  #0A1628;
-  --bg-card:   rgba(255,255,255,0.04);
-  --bg-card-hi:rgba(255,255,255,0.08);
-  --text:      #DFF0FF;
-  --text-sub:  #8AB5D8;
-  --text-muted:#4E6D8A;
-  --blue:      #60A5FA;
-  --blue-soft: rgba(96,165,250,0.12);
-  --amber:     #FBBF24;
-  --amber-soft:rgba(251,191,36,0.12);
-  --green:     #34D399;
-  --green-soft:rgba(52,211,153,0.10);
-  --red:       #F87171;
-  --red-soft:  rgba(248,113,113,0.10);
-  --border:    rgba(96,165,250,0.14);
-  --border-hi: rgba(96,165,250,0.30);
+  --bg:        #EEF2F9;
+  --bg-slide:  #FFFFFF;
+  --bg-card:   rgba(37,99,235,0.04);
+  --bg-card-hi:rgba(37,99,235,0.08);
+  --text:      #1E293B;
+  --text-sub:  #475569;
+  --text-muted:#94A3B8;
+  --blue:      #2563EB;
+  --blue-soft: rgba(37,99,235,0.08);
+  --amber:     #B45309;
+  --amber-soft:rgba(180,83,9,0.08);
+  --green:     #059669;
+  --green-soft:rgba(5,150,105,0.08);
+  --red:       #DC2626;
+  --red-soft:  rgba(220,38,38,0.08);
+  --border:    rgba(37,99,235,0.15);
+  --border-hi: rgba(37,99,235,0.35);
   --font-body: 'Pretendard','Noto Sans KR',sans-serif;
   --font-disp: 'Space Grotesk',sans-serif;
   --font-mono: 'JetBrains Mono',monospace;
@@ -90,7 +90,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   font-size:clamp(26px,3.2vw,40px);
   font-weight:700;
   line-height:1.2;
-  color:#FFFFFF;
+  color:var(--text);
   letter-spacing:-.02em;
 }
 .slide-hdr .time-badge{
@@ -129,15 +129,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   border-radius:var(--r);
   padding:18px 22px;
 }
-.card--blue{border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.06);}
-.card--amber{border-color:rgba(251,191,36,0.3);background:var(--amber-soft);}
-.card--green{border-color:rgba(52,211,153,0.3);background:var(--green-soft);}
-.card--red{border-color:rgba(248,113,113,0.3);background:var(--red-soft);}
+.card--blue{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
+.card--amber{border-color:rgba(180,83,9,0.25);background:var(--amber-soft);}
+.card--green{border-color:rgba(5,150,105,0.25);background:var(--green-soft);}
+.card--red{border-color:rgba(220,38,38,0.25);background:var(--red-soft);}
 .card-title{
   font-family:var(--font-disp);
   font-size:15px;font-weight:700;
   color:var(--blue);margin-bottom:8px;
 }
+.card{box-shadow:0 1px 4px rgba(37,99,235,0.06);}
 .card-body{font-size:18px;line-height:1.7;color:var(--text);}
 .card-body em{color:var(--amber);font-style:normal;font-weight:600;}
 
@@ -145,22 +146,22 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .info{
   display:flex;align-items:flex-start;gap:14px;
   background:var(--blue-soft);
-  border:1px solid rgba(96,165,250,0.25);
+  border:1px solid rgba(37,99,235,0.20);
   border-radius:var(--r);
   padding:16px 20px;
 }
 .info__icon{font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;}
 .info__ttl{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;font-family:var(--font-disp);}
 .info__body{font-size:18px;line-height:1.7;color:var(--text);}
-.info--warn{background:var(--red-soft);border-color:rgba(248,113,113,0.25);}
+.info--warn{background:var(--red-soft);border-color:rgba(220,38,38,0.20);}
 .info--warn .info__ttl{color:var(--red);}
-.info--amber{background:var(--amber-soft);border-color:rgba(251,191,36,0.25);}
+.info--amber{background:var(--amber-soft);border-color:rgba(180,83,9,0.20);}
 .info--amber .info__ttl{color:var(--amber);}
 
 /* ─── 테이블 ─── */
 .tbl{width:100%;border-collapse:collapse;font-size:16px;}
 .tbl th{
-  background:rgba(96,165,250,0.1);
+  background:rgba(37,99,235,0.07);
   color:var(--blue);font-family:var(--font-disp);
   font-size:14px;font-weight:700;
   text-align:left;padding:10px 14px;
@@ -168,14 +169,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 }
 .tbl td{
   padding:10px 14px;
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(37,99,235,0.07);
   color:var(--text);line-height:1.6;
   vertical-align:middle;
   font-size:16px;
 }
 .tbl tr:last-child td{border-bottom:none;}
-.tbl tr:hover td{background:rgba(255,255,255,0.03);}
-.tbl-wrap{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.tbl tr:hover td{background:rgba(37,99,235,0.03);}
+.tbl-wrap{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 4px rgba(37,99,235,0.06);}
 
 /* ─── 배지 ─── */
 .badge{
@@ -190,16 +191,17 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 
 /* ─── 코드 블록 ─── */
 .code{
-  background:#050D1A;
-  border:1px solid rgba(96,165,250,0.18);
+  background:#F1F5F9;
+  border:1px solid rgba(37,99,235,0.15);
   border-radius:var(--r);
   overflow:hidden;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .code__hdr{
   display:flex;align-items:center;gap:8px;
   padding:10px 16px;
-  border-bottom:1px solid rgba(96,165,250,0.12);
-  background:rgba(96,165,250,0.05);
+  border-bottom:1px solid rgba(37,99,235,0.10);
+  background:rgba(37,99,235,0.04);
 }
 .code__dots{display:flex;gap:5px;}
 .code__dot{width:10px;height:10px;border-radius:50%;}
@@ -210,13 +212,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .code__body pre{
   font-family:var(--font-mono);
   font-size:16px;line-height:1.65;
-  color:#C9E0F5;
+  color:#334155;
   padding:16px 18px;
   white-space:pre-wrap;
   word-break:break-all;
 }
-.c-k{color:#60A5FA;}.c-s{color:#86EFAC;}.c-n{color:#F87171;}
-.c-cm{color:#5A7A9A;font-style:italic;}.c-hl{color:#FBBF24;}
+.c-k{color:#1D4ED8;}.c-s{color:#059669;}.c-n{color:#DC2626;}
+.c-cm{color:#64748B;font-style:italic;}.c-hl{color:#B45309;}
 
 /* ─── 그리드 카드 3열 ─── */
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -226,11 +228,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   border:1px solid var(--border);
   border-radius:var(--r);
   padding:18px;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .g-card__icon{font-size:24px;margin-bottom:10px;}
-.g-card__title{font-family:var(--font-disp);font-size:15px;font-weight:700;color:#FFF;margin-bottom:6px;}
+.g-card__title{font-family:var(--font-disp);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .g-card__body{font-size:16px;line-height:1.65;color:var(--text-sub);}
-.g-card--hi{border-color:rgba(96,165,250,0.3);background:rgba(96,165,250,0.06);}
+.g-card--hi{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
 
 /* ─── 흐름 스텝 ─── */
 .flow{display:flex;flex-direction:column;gap:10px;}
@@ -240,6 +243,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   border:1px solid var(--border);
   border-radius:var(--r);
   padding:14px 18px;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .flow-num{
   width:28px;height:28px;border-radius:50%;
@@ -247,7 +251,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   font-family:var(--font-disp);font-size:13px;font-weight:700;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
-.flow-ttl{font-family:var(--font-disp);font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+.flow-ttl{font-family:var(--font-disp);font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;}
 .flow-desc{font-size:16px;color:var(--text-sub);line-height:1.6;}
 
 /* ─── 섹션 레이블 ─── */
@@ -261,12 +265,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 
 /* ─── SVG 다이어그램 ─── */
 .diagram{
-  background:rgba(255,255,255,0.02);
+  background:#F8FAFC;
   border:1px solid var(--border);
   border-radius:var(--r);
   padding:12px;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .diagram img{width:100%;max-height:180px;object-fit:contain;}
 
@@ -288,10 +293,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   border:2px solid var(--bg-slide);
 }
 .tl-time{font-family:var(--font-mono);font-size:12px;color:var(--amber);font-weight:500;}
-.tl-title{font-size:15px;font-weight:700;color:#fff;line-height:1.4;}
+.tl-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.4;}
 .tl-desc{font-size:13px;color:var(--text-sub);margin-top:3px;}
 .tl-item--faded{opacity:.45;}
-.tl-item--hi{background:var(--blue-soft);border-radius:var(--r-sm);border:1px solid rgba(96,165,250,0.2);margin-left:0;padding-left:14px;margin-top:10px;}
+.tl-item--hi{background:var(--blue-soft);border-radius:var(--r-sm);border:1px solid rgba(37,99,235,0.18);margin-left:0;padding-left:14px;margin-top:10px;}
 .tl-item--hi::before{display:none;}
 
 /* ─── 보안 카드 6개 ─── */
@@ -299,9 +304,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .sec-card{
   background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--r);padding:16px;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .sec-card__icon{font-size:22px;margin-bottom:8px;}
-.sec-card__title{font-family:var(--font-disp);font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;}
+.sec-card__title{font-family:var(--font-disp);font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;}
 .sec-card__list{list-style:none;}
 .sec-card__list li{font-size:15px;color:var(--text-sub);padding:3px 0;padding-left:14px;position:relative;line-height:1.6;}
 .sec-card__list li::before{content:'·';position:absolute;left:0;color:var(--blue);}
@@ -309,14 +315,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 /* ─── 실습 박스 ─── */
 .lab{
   background:var(--amber-soft);
-  border:1px solid rgba(251,191,36,0.25);
+  border:1px solid rgba(180,83,9,0.20);
   border-radius:var(--r);
   padding:16px 20px;
 }
 .lab__tag{font-family:var(--font-disp);font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;}
-.lab__title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;}
+.lab__title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .lab__body{font-size:16px;color:var(--text-sub);line-height:1.65;}
-.lab__body code{font-family:var(--font-mono);background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;color:var(--blue);}
+.lab__body code{font-family:var(--font-mono);background:rgba(37,99,235,0.10);padding:2px 6px;border-radius:4px;color:var(--blue);}
 
 /* ─── 쇼케이스 ─── */
 .showcase{display:flex;flex-direction:column;gap:8px;}
@@ -324,24 +330,25 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   display:flex;align-items:center;gap:14px;
   background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--r-sm);padding:12px 16px;
+  box-shadow:0 1px 3px rgba(37,99,235,0.05);
 }
-.showcase-name{font-size:15px;font-weight:700;color:#fff;flex:1;}
+.showcase-name{font-size:15px;font-weight:700;color:var(--text);flex:1;}
 .showcase-tech{font-size:13px;color:var(--text-sub);}
 
 /* ─── 표지 슬라이드 배경 ─── */
-.slide--cover{background:var(--bg);}
+.slide--cover{background:linear-gradient(135deg,#EEF2F9 0%,#E0EAFF 100%);}
 .slide--cover::before{
   content:'';position:absolute;
   top:-300px;right:-200px;
   width:800px;height:800px;
-  background:radial-gradient(circle,rgba(96,165,250,.08) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(37,99,235,.10) 0%,transparent 65%);
   pointer-events:none;
 }
 .slide--cover::after{
   content:'';position:absolute;
   bottom:-200px;left:-100px;
   width:600px;height:600px;
-  background:radial-gradient(circle,rgba(251,191,36,.05) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(180,83,9,.06) 0%,transparent 65%);
   pointer-events:none;
 }
 
@@ -364,7 +371,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   font-weight:700;
   line-height:1.1;
   letter-spacing:-.03em;
-  color:#FFF;
+  color:var(--text);
   margin-bottom:20px;
 }
 .cover-h1 span{
@@ -380,18 +387,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .cover-badges{display:flex;flex-wrap:wrap;gap:10px;}
 .cover-badge{
   font-family:var(--font-disp);font-size:13px;font-weight:600;
-  background:var(--bg-card);border:1px solid var(--border);
+  background:#FFFFFF;border:1px solid var(--border);
   border-radius:20px;padding:6px 16px;color:var(--text);
+  box-shadow:0 1px 3px rgba(37,99,235,0.08);
 }
-.cover-badge--blue{border-color:rgba(96,165,250,0.35);color:var(--blue);}
-.cover-badge--amber{border-color:rgba(251,191,36,0.35);color:var(--amber);}
+.cover-badge--blue{border-color:rgba(37,99,235,0.30);color:var(--blue);}
+.cover-badge--amber{border-color:rgba(180,83,9,0.30);color:var(--amber);}
 
 /* ─── 네비게이션 버튼 ─── */
 .nav-btn{
   position:fixed;top:50%;transform:translateY(-50%);
   z-index:200;
   width:48px;height:48px;border-radius:50%;
-  background:rgba(6,14,31,0.75);
+  background:rgba(255,255,255,0.88);
   border:1px solid var(--border-hi);
   color:var(--blue);
   cursor:pointer;
@@ -400,8 +408,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   transition:all .2s;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
+  box-shadow:0 2px 8px rgba(37,99,235,0.12);
 }
-.nav-btn:hover{background:rgba(96,165,250,0.15);border-color:var(--blue);}
+.nav-btn:hover{background:rgba(37,99,235,0.10);border-color:var(--blue);}
 .nav-btn:disabled{opacity:.25;cursor:default;}
 .nav-btn--prev{left:14px;}
 .nav-btn--next{right:14px;}
@@ -413,7 +422,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 }
 .dot{
   width:7px;height:7px;border-radius:50%;
-  background:rgba(96,165,250,0.25);
+  background:rgba(37,99,235,0.22);
   cursor:pointer;transition:all .25s;
 }
 .dot--active{
@@ -434,8 +443,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 
 /* ─── 학습 포인트 박스 ─── */
 .tip{
-  background:rgba(52,211,153,.06);
-  border:1px solid rgba(52,211,153,.2);
+  background:rgba(5,150,105,.06);
+  border:1px solid rgba(5,150,105,.18);
   border-radius:var(--r-sm);
   padding:12px 16px;
   font-size:15px;color:var(--text);line-height:1.7;
@@ -447,6 +456,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .hook-card{
   background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--r-sm);padding:14px;text-align:center;
+  box-shadow:0 1px 3px rgba(37,99,235,0.05);
 }
 .hook-card__type{
   font-family:var(--font-mono);font-size:14px;font-weight:500;
@@ -470,14 +480,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .slide::-webkit-scrollbar{display:none;}
 
 /* ─── 라이트박스 ─── */
-.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9000;align-items:center;justify-content:center;cursor:zoom-out;}
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.80);z-index:9000;align-items:center;justify-content:center;cursor:zoom-out;backdrop-filter:blur(4px);}
 .lb-overlay.lb-active{display:flex;}
-.lb-img{max-width:90vw;max-height:90vh;border-radius:10px;box-shadow:0 12px 64px rgba(0,0,0,.7);}
+.lb-img{max-width:90vw;max-height:90vh;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.55);}
 .diagram img,.col img[src]{cursor:zoom-in;transition:opacity .15s,transform .15s;}
 .diagram img:hover,.col img[src]:hover{opacity:.85;transform:scale(1.02);}
 
 /* ─── details/summary 펼치기 ─── */
-details.details-expand{border:1px solid var(--border,rgba(255,255,255,.12));border-radius:8px;overflow:hidden;margin-top:4px;}
+details.details-expand{border:1px solid var(--border,rgba(37,99,235,.15));border-radius:8px;overflow:hidden;margin-top:4px;background:rgba(37,99,235,0.03);}
 details.details-expand summary.details-summary{padding:9px 14px;font-size:13px;font-weight:700;color:var(--text-sub);cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;user-select:none;}
 details.details-expand summary.details-summary::before{content:'▶';font-size:9px;transition:transform .2s;display:inline-block;}
 details.details-expand[open] summary.details-summary::before{transform:rotate(90deg);}
@@ -486,9 +496,9 @@ details.details-expand .details-body{padding:10px 14px 12px;}
 
 /* ─── 코드 복사 버튼 ─── */
 .code{position:relative;}
-.copy-btn{position:absolute;top:8px;right:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.65);font-size:11px;padding:3px 9px;border-radius:5px;cursor:pointer;transition:all .2s;font-family:var(--font-sans);line-height:1.6;}
-.copy-btn:hover{background:rgba(255,255,255,.22);color:#fff;}
-.copy-btn.copied{background:var(--amber);border-color:var(--amber);color:#0A1628;}
+.copy-btn{position:absolute;top:8px;right:10px;background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.20);color:var(--blue);font-size:11px;padding:3px 9px;border-radius:5px;cursor:pointer;transition:all .2s;font-family:var(--font-sans);line-height:1.6;}
+.copy-btn:hover{background:rgba(37,99,235,.18);color:#1D4ED8;}
+.copy-btn.copied{background:var(--blue);border-color:var(--blue);color:#fff;}
 </style>
 </head>
 <body>
@@ -533,7 +543,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
       <div class="g-card g-card--hi">
         <div class="g-card__icon">⚡</div>
         <div class="g-card__title" style="color:var(--amber)">오늘의 바이브 코딩</div>
-        <div class="g-card__body">Projects · Skills · Hooks · Agents · MCP<br>Claude가 <em style="color:var(--amber)">동료 개발자·팀 오케스트레이터</em> 역할<br><br><strong style="color:#fff">→ 오늘 배우는 것!</strong></div>
+        <div class="g-card__body">Projects · Skills · Hooks · Agents · MCP<br>Claude가 <em style="color:var(--amber)">동료 개발자·팀 오케스트레이터</em> 역할<br><br><strong style="color:var(--blue)">→ 오늘 배우는 것!</strong></div>
       </div>
       <div class="g-card">
         <div class="g-card__icon">🚀</div>
@@ -580,7 +590,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">📁</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Projects = "Claude에게 우리 회사 배경지식을 영구 주입하는 공간"<br>매번 설명하지 않아도 Claude가 맥락을 기억합니다.</div>
+          <div class="info__body">Projects = "Claude에게 우리 회사 배경지식을 영구 주입하는 공간"<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 팀마다 보고서 스타일·금지 표현·호칭 체계가 다를 때, 매번 Claude에게 설명하는 게 번거로울 때 설정하세요.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 설정 후에는 "이번 달 보고서 써줘" 한 마디만 해도 팀 스타일(결론 먼저·문장 2줄·번역투 금지)이 자동 반영됩니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -595,9 +605,14 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         </table>
       </div>
       <div class="lab">
-        <div class="lab__tag">💪 직접 해보기</div>
+        <div class="lab__tag">💪 직접 해보기 — 4단계</div>
         <div class="lab__title">내 팀 Custom Instructions 작성</div>
-        <div class="lab__body">claude.ai → Projects → 새 프로젝트 → Custom Instructions에 우리 팀 규칙 3가지 이상 작성 → 테스트</div>
+        <div class="lab__body">
+          <strong style="color:var(--amber)">①</strong> <code>claude.ai</code> 접속 → 좌측 <code>Projects</code> 클릭<br>
+          <strong style="color:var(--amber)">②</strong> 새 프로젝트 생성 → <code>Custom Instructions</code> 탭 선택<br>
+          <strong style="color:var(--amber)">③</strong> 우리 팀 규칙 3가지 이상 입력 — 예: "결론 먼저", "문장 2줄 이내", "번역투 금지"<br>
+          <strong style="color:var(--amber)">④</strong> 새 대화에서 "이번 달 보고서 써줘" → 설정 전·후 결과 직접 비교
+        </div>
       </div>
     </div>
     <div class="col">
@@ -638,7 +653,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">⚡</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Skills = "특정 업무 전문 능력을 Claude에게 장착시키는 팩"<br>Projects가 지식 DB라면, Skills는 직원 스킬셋입니다.</div>
+          <div class="info__body">Skills = "특정 업무 전문 능력을 Claude에게 장착시키는 팩"<br>Projects가 지식 DB라면, Skills는 직원 스킬셋입니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — "보고서 써줘", "코드 리뷰해줘" 같은 특정 작업을 반복할 때. 업무별로 스킬 하나씩 만들어두면 됩니다.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 스킬 이름만 언급하면 Claude가 자동으로 전문 모드로 전환. 100개 스킬도 필요한 것만 로드해 토큰 낭비 없음.</div>
         </div>
       </div>
       <div class="g2">
@@ -665,9 +680,9 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="card-title">Progressive Disclosure — 3단계 로딩</div>
         <div class="card-body" style="font-size:18px;">
           <strong style="color:var(--blue)">L1</strong> 이름·설명만 — 항상 로드, 토큰 최소<br>
-          <strong style="color:var(--amber)">L2</strong> SKILL.md 전체 — 관련 작업 감지 시<br>
-          <strong style="color:#A78BFA)">L3</strong> references/ 파일 — 필요 시만<br>
-          <span style="font-size:16px;color:var(--text-sub)">100개 스킬도 L1만 항상 로드 → 토큰 낭비 없음</span>
+          <strong style="color:var(--amber)">L2</strong> SKILL.md 전체 — "보고서 써줘" 감지 시 자동 로드<br>
+          <strong style="color:var(--green)">L3</strong> references/ 파일 — 대용량 참조 파일 필요 시만<br>
+          <span style="font-size:16px;color:var(--text-sub)">예: "보고서 써줘" 입력 → weekly-report 스킬 L2 로드 → 팀 양식 자동 적용</span>
         </div>
       </div>
     </div>
@@ -736,7 +751,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">📄</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">CLAUDE.md = "Claude Code가 프로젝트에서 매 세션 자동으로 읽는 설정 파일"<br>한 번 작성하면 팀 전체에 영구 적용됩니다.</div>
+          <div class="info__body">CLAUDE.md = "Claude Code가 프로젝트에서 매 세션 자동으로 읽는 설정 파일"<br>한 번 작성하면 팀 전체에 영구 적용됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 프로젝트에서 "React 쓰지 마라", "커밋 메시지는 한글로", "API 키 하드코딩 절대 금지" 같은 팀 규칙을 Claude가 매번 지키게 하고 싶을 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 기술 스택·코딩 규칙·팀 컨벤션을 이 파일 하나로 고정합니다. git에 커밋하면 팀원 전체가 동일한 규칙의 AI를 갖게 됩니다.</div>
         </div>
       </div>
       <div class="diagram">
@@ -1047,7 +1062,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--amber">
         <div class="card-title">scope 3단계</div>
-        <div class="card-body" style="font-size:18px;"><strong style="color:#fff">user</strong> — 내 모든 프로젝트에서 사용<br><strong style="color:#fff">project</strong> — 이 프로젝트 팀 전체 공유<br><strong style="color:#fff">local</strong> — 나만, 이 프로젝트에서만</div>
+        <div class="card-body" style="font-size:18px;"><strong style="color:var(--blue)">user</strong> — 내 모든 프로젝트에서 사용<br><strong style="color:var(--blue)">project</strong> — 이 프로젝트 팀 전체 공유<br><strong style="color:var(--blue)">local</strong> — 나만, 이 프로젝트에서만</div>
       </div>
     </div>
   </div>
@@ -1362,7 +1377,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card" style="text-align:center;padding:28px;">
         <div style="font-size:36px;margin-bottom:8px;">🎯</div>
-        <div style="font-family:var(--font-disp);font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;">학습 마무리</div>
+        <div style="font-family:var(--font-disp);font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px;">학습 마무리</div>
         <div style="font-size:16px;color:var(--text-sub);">오늘 배운 기능 하나를 내일 실제 업무에 적용해보세요</div>
       </div>
     </div>
