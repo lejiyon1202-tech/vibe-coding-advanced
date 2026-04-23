@@ -36,6 +36,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   --font-disp: 'Space Grotesk',sans-serif;
   --font-mono: 'JetBrains Mono',monospace;
   --r:12px;--r-sm:8px;--r-lg:18px;
+  --gap-sm:12px;--gap-md:16px;--gap-lg:24px;
   --slide-count:16;
 }
 
@@ -109,18 +110,18 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 /* ─── 슬라이드 바디 ─── */
 .slide-body{
   flex:1;
-  padding:20px 56px 28px;
+  padding:20px 56px 46px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  gap:16px;
+  gap:var(--gap-md);
 }
 .slide-body--cols{
   flex-direction:row;
-  gap:24px;
+  gap:var(--gap-lg);
 }
-.col{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0;}
+.col{flex:1;display:flex;flex-direction:column;gap:var(--gap-md);min-width:0;justify-content:space-between;}
 
 /* ─── 카드 ─── */
 .card{
@@ -148,7 +149,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   background:var(--blue-soft);
   border:1px solid rgba(37,99,235,0.20);
   border-radius:var(--r);
-  padding:16px 20px;
+  padding:18px 22px;
 }
 .info__icon{font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;}
 .info__ttl{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;font-family:var(--font-disp);}
@@ -221,13 +222,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .c-cm{color:#64748B;font-style:italic;}.c-hl{color:#B45309;}
 
 /* ─── 그리드 카드 3열 ─── */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-md);align-items:start;}
 .g-card{
   background:var(--bg-card);
   border:1px solid var(--border);
   border-radius:var(--r);
-  padding:18px;
+  padding:18px 22px;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .g-card__icon{font-size:24px;margin-bottom:10px;}
@@ -236,13 +237,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .g-card--hi{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
 
 /* ─── 흐름 스텝 ─── */
-.flow{display:flex;flex-direction:column;gap:10px;}
+.flow{display:flex;flex-direction:column;gap:var(--gap-sm);}
 .flow-item{
   display:flex;align-items:flex-start;gap:14px;
   background:var(--bg-card);
   border:1px solid var(--border);
   border-radius:var(--r);
-  padding:14px 18px;
+  padding:16px 20px;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .flow-num{
@@ -273,7 +274,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   overflow:hidden;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
-.diagram img{width:100%;max-height:180px;object-fit:contain;}
+.diagram img{width:100%;max-height:160px;object-fit:contain;}
 
 /* ─── 타임라인 ─── */
 .timeline{display:flex;flex-direction:column;gap:0;}
@@ -300,10 +301,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .tl-item--hi::before{display:none;}
 
 /* ─── 보안 카드 6개 ─── */
-.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-sm);}
 .sec-card{
   background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--r);padding:16px;
+  border-radius:var(--r);padding:16px 20px;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .sec-card__icon{font-size:22px;margin-bottom:8px;}
@@ -317,7 +318,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   background:var(--amber-soft);
   border:1px solid rgba(180,83,9,0.20);
   border-radius:var(--r);
-  padding:16px 20px;
+  padding:18px 22px;
 }
 .lab__tag{font-family:var(--font-disp);font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;}
 .lab__title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
@@ -325,12 +326,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .lab__body code{font-family:var(--font-mono);background:rgba(37,99,235,0.10);padding:2px 6px;border-radius:4px;color:var(--blue);}
 
 /* ─── 쇼케이스 ─── */
-.showcase{display:flex;flex-direction:column;gap:8px;}
+.showcase{display:flex;flex-direction:column;gap:var(--gap-sm);}
 .showcase-item{
   display:flex;align-items:center;gap:14px;
   background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--r-sm);padding:12px 16px;
-  box-shadow:0 1px 3px rgba(37,99,235,0.05);
+  border-radius:var(--r-sm);padding:14px 18px;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .showcase-name{font-size:15px;font-weight:700;color:var(--text);flex:1;}
 .showcase-tech{font-size:13px;color:var(--text-sub);}
@@ -446,23 +447,23 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   background:rgba(5,150,105,.06);
   border:1px solid rgba(5,150,105,.18);
   border-radius:var(--r-sm);
-  padding:12px 16px;
-  font-size:15px;color:var(--text);line-height:1.7;
+  padding:14px 18px;
+  font-size:16px;color:var(--text);line-height:1.7;
 }
 .tip strong{color:var(--green);font-family:var(--font-disp);}
 
 /* ─── 핸들러 그리드 (Hooks) ─── */
-.hook-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.hook-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-sm);}
 .hook-card{
   background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--r-sm);padding:14px;text-align:center;
-  box-shadow:0 1px 3px rgba(37,99,235,0.05);
+  border-radius:var(--r-sm);padding:16px 18px;text-align:center;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .hook-card__type{
   font-family:var(--font-mono);font-size:14px;font-weight:500;
   color:var(--blue);margin-bottom:6px;
 }
-.hook-card__desc{font-size:15px;color:var(--text-sub);line-height:1.5;}
+.hook-card__desc{font-size:16px;color:var(--text-sub);line-height:1.5;}
 
 /* ─── 반응형 ─── */
 @media (max-width:768px){
@@ -493,6 +494,8 @@ details.details-expand summary.details-summary::before{content:'▶';font-size:9
 details.details-expand[open] summary.details-summary::before{transform:rotate(90deg);}
 details.details-expand summary.details-summary:hover{color:var(--text);}
 details.details-expand .details-body{padding:10px 14px 12px;}
+/* g2 그리드 안 details는 높이 강제 확장 안 함 */
+.g2 > details.details-expand{align-self:start;margin-top:0;}
 
 /* ─── 코드 복사 버튼 ─── */
 .code{position:relative;}
@@ -878,7 +881,12 @@ details.details-expand .details-body{padding:10px 14px 12px;}
           </tbody>
         </table>
       </div>
-      <div class="tip"><strong>💡 언제 써야 할까요?</strong><br>"저장 후 매번 lint 돌리기", "위험 명령어 전 확인", "작업 완료 시 Slack 알림" — 사람이 반복하는 규칙이 있다면 Hook으로 한 번 설정하면 자동화됩니다. S08 심화 슬라이드에서 실제 설정 코드를 확인하세요.</div>
+      <details class="details-expand">
+        <summary class="details-summary">💡 언제 써야 할까요?</summary>
+        <div class="details-body">
+          <div class="tip">"저장 후 매번 lint 돌리기", "위험 명령어 전 확인", "작업 완료 시 Slack 알림" — 사람이 반복하는 규칙이 있다면 Hook으로 한 번 설정하면 자동화됩니다. ▶ S08 심화 슬라이드에서 실제 설정 코드를 확인하세요.</div>
+        </div>
+      </details>
     </div>
   </div>
 </div>
