@@ -36,7 +36,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   --font-disp: 'Space Grotesk',sans-serif;
   --font-mono: 'JetBrains Mono',monospace;
   --r:12px;--r-sm:8px;--r-lg:18px;
-  --slide-count:15;
+  --slide-count:16;
 }
 
 /* ─── 슬라이드 덱 ─── */
@@ -512,7 +512,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="2">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Introduction</div>
-    <div class="slide-counter">02 / 15</div>
+    <div class="slide-counter">02 / 16</div>
   </div>
   <div class="slide-hdr"><h2>바이브 코딩 2026 — 지금 어디까지 왔나</h2></div>
   <div class="slide-body">
@@ -561,7 +561,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="3">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 1</div>
-    <div class="slide-counter">03 / 15</div>
+    <div class="slide-counter">03 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>1-1 Projects — 배경 지식 컨테이너</h2>
@@ -619,7 +619,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="4">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 1</div>
-    <div class="slide-counter">04 / 15</div>
+    <div class="slide-counter">04 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>1-2 Skills — 동적 능력 확장 팩</h2>
@@ -670,7 +670,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="5">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 1 Workshop</div>
-    <div class="slide-counter">05 / 15</div>
+    <div class="slide-counter">05 / 16</div>
   </div>
   <div class="slide-hdr"><h2>Part 1 미니 워크숍</h2></div>
   <div class="slide-body">
@@ -717,7 +717,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="6">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 2</div>
-    <div class="slide-counter">06 / 15</div>
+    <div class="slide-counter">06 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>2-1 CLAUDE.md — 프로젝트 영구 지침 파일</h2>
@@ -782,7 +782,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 <div class="slide" data-slide="7">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 2</div>
-    <div class="slide-counter">07 / 15</div>
+    <div class="slide-counter">07 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>2-2 CLI Skills &amp; 2-3 Hooks — 자동화 핵심</h2>
@@ -811,32 +811,115 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
       </div>
     </div>
     <div class="col">
-      <div class="part-label">Hooks</div>
+      <div class="part-label">Hooks — 자동화 트리거</div>
       <div class="info">
         <div class="info__icon">🪝</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Hook = "Claude가 특정 행동을 하기 전·후에 자동 실행하는 트리거"</div>
+          <div class="info__body">Hook = "Claude의 특정 행동(도구 사용·응답 완료 등)이 발생할 때 자동으로 실행되는 이벤트 리스너"<br><br>사람이 없어도 <strong style="color:var(--amber)">규칙이 자동 실행</strong>됩니다 — 위험 명령어 차단, 저장 후 Lint 자동화, 완료 시 Slack 알림까지 모두 Hook 하나로 설정.</div>
         </div>
       </div>
       <div class="diagram">
         <img src="assets/img-hooks.svg" alt="Hooks — 이벤트·핸들러 구조">
       </div>
-      <div class="hook-grid">
-        <div class="hook-card"><div class="hook-card__type">command</div><div class="hook-card__desc">쉘 스크립트<br>Lint 자동 실행</div></div>
-        <div class="hook-card"><div class="hook-card__type">http</div><div class="hook-card__desc">Webhook 호출<br>Slack 알림</div></div>
-        <div class="hook-card"><div class="hook-card__type">prompt</div><div class="hook-card__desc">Claude 판단 위임<br>삭제 확인</div></div>
-        <div class="hook-card"><div class="hook-card__type">agent</div><div class="hook-card__desc">서브에이전트<br>자동 실행</div></div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>이벤트 타입</th><th>발생 시점</th><th>대표 활용</th></tr></thead>
+          <tbody>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">PreToolUse</code></td><td>도구 실행 직전</td><td>위험 명령어 차단·승인 요청</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--amber)">PostToolUse</code></td><td>도구 실행 직후</td><td>Lint·테스트 자동 실행</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--green)">Stop</code></td><td>Claude 응답 완료</td><td>Slack·Discord 자동 알림</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--text-sub)">SubagentStop</code></td><td>서브에이전트 완료</td><td>결과 자동 후처리</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── S09 Part 2-4: Subagents ── -->
+<!-- ── S08 NEW: Part 2 Hooks 심화 ── -->
 <div class="slide" data-slide="8">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 2</div>
-    <div class="slide-counter">08 / 15</div>
+    <div class="slide-counter">08 / 16</div>
+  </div>
+  <div class="slide-hdr">
+    <h2>2-3 Hooks 심화 — 설정 파일로 규칙 자동화</h2>
+  </div>
+  <div class="slide-body slide-body--cols">
+    <div class="col">
+      <div class="info info--warn">
+        <div class="info__icon">⚠️</div>
+        <div>
+          <div class="info__ttl">Hook이 없으면 어떻게 될까?</div>
+          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--red)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다. Hook = 사람이 자리를 비워도 작동하는 자동 규칙입니다.</div>
+        </div>
+      </div>
+      <div class="code">
+        <div class="code__hdr">
+          <div class="code__dots"><div class="code__dot"></div><div class="code__dot"></div><div class="code__dot"></div></div>
+          <span class="code__file">.claude/settings.json — Hooks 설정 예시</span>
+        </div>
+        <div class="code__body"><pre><span class="c-k">"hooks"</span>: {
+  <span class="c-s">"PreToolUse"</span>: [{
+    <span class="c-s">"matcher"</span>: <span class="c-s">"Bash"</span>,
+    <span class="c-s">"hooks"</span>: [{
+      <span class="c-s">"type"</span>: <span class="c-s">"command"</span>,
+      <span class="c-s">"command"</span>: <span class="c-s">"echo $CLAUDE_TOOL_INPUT | grep -i 'rm -rf' &amp;&amp; echo '🔴 위험 명령어 감지!' || true"</span>
+    }]
+  }],
+  <span class="c-s">"Stop"</span>: [{
+    <span class="c-s">"hooks"</span>: [{
+      <span class="c-s">"type"</span>: <span class="c-s">"http"</span>,
+      <span class="c-s">"url"</span>: <span class="c-s">"https://hooks.slack.com/your-webhook-url"</span>,
+      <span class="c-s">"method"</span>: <span class="c-s">"POST"</span>
+    }]
+  }]
+}</pre>
+        </div>
+      </div>
+      <div class="tip">
+        <strong>💡 설정 위치</strong><br>
+        <code style="font-family:var(--font-mono);color:var(--blue)">.claude/settings.json</code> 파일에 <code style="font-family:var(--font-mono);color:var(--blue)">"hooks"</code> 키를 추가합니다. Claude Code를 재시작하면 즉시 적용됩니다.
+      </div>
+    </div>
+    <div class="col">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>핸들러 타입</th><th>하는 일</th><th>대표 활용</th></tr></thead>
+          <tbody>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">command</code></td><td>쉘 명령어 실행</td><td>Lint·테스트·파일 로그 기록</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--green)">http</code></td><td>URL로 POST 웹훅</td><td>Slack·Discord·Teams 알림</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--amber)">prompt</code></td><td>Claude에 추가 지시</td><td>삭제 전 "정말 실행?" 확인</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--text)">agent</code></td><td>서브에이전트 실행</td><td>완료 후 자동 코드 리뷰</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card card--blue">
+        <div class="card-title">Hook에서 사용 가능한 환경 변수</div>
+        <div class="card-body" style="font-family:var(--font-mono);font-size:14px;line-height:1.9;">
+          <span style="color:var(--blue)">$CLAUDE_TOOL_NAME</span><br>
+          <span style="color:var(--text-sub);font-size:13px;">→ 실행된 도구 이름 (예: Bash, Edit, Write)</span><br>
+          <span style="color:var(--amber)">$CLAUDE_TOOL_INPUT</span><br>
+          <span style="color:var(--text-sub);font-size:13px;">→ 도구에 전달된 입력값 (명령어 내용 등)</span><br>
+          <span style="color:var(--green)">$CLAUDE_TOOL_RESULT</span><br>
+          <span style="color:var(--text-sub);font-size:13px;">→ 도구 실행 후 결과값</span>
+        </div>
+      </div>
+      <div class="lab">
+        <div class="lab__tag">💪 직접 해보기</div>
+        <div class="lab__title">작업 완료 알림 Hook 추가하기</div>
+        <div class="lab__body">① <code>.claude/settings.json</code> 열기 ② <code>"hooks":{"Stop":[{"hooks":[{"type":"command","command":"echo 완료!"}]}]}</code> 추가 ③ Claude Code 재시작 ④ 작업 지시 후 알림 확인</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── S10 Part 2-4: Subagents ── -->
+<div class="slide" data-slide="9">
+  <div class="slide-topbar">
+    <div class="slide-eyebrow">Part 2</div>
+    <div class="slide-counter">09 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>2-4 Subagents — 독립 AI 에이전트 위임</h2>
@@ -904,10 +987,10 @@ Agent({ prompt: <span class="c-s">"DB 스키마 분석"</span> })
 </div>
 
 <!-- ── S10 Part 2-5: MCP ── -->
-<div class="slide" data-slide="9">
+<div class="slide" data-slide="10">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 2</div>
-    <div class="slide-counter">09 / 15</div>
+    <div class="slide-counter">10 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>2-5 MCP — 외부 서비스 연결 표준 프로토콜</h2>
@@ -958,10 +1041,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S11 Part 3: 조직 구조 + 팀 대화 ── -->
-<div class="slide" data-slide="10">
+<div class="slide" data-slide="11">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 3</div>
-    <div class="slide-counter">10 / 15</div>
+    <div class="slide-counter">11 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>멀티에이전트 AI 개발 조직 구조</h2>
@@ -1000,10 +1083,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S12 Part 3: 팀 대화 세션 ── -->
-<div class="slide" data-slide="11">
+<div class="slide" data-slide="12">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 3</div>
-    <div class="slide-counter">11 / 15</div>
+    <div class="slide-counter">12 / 16</div>
   </div>
   <div class="slide-hdr">
     <h2>자가 워크시트 — 내 조직에 어떻게 적용할까?</h2>
@@ -1045,10 +1128,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S13 Part 3: Gate + MCP + 쇼케이스 ── -->
-<div class="slide" data-slide="12">
+<div class="slide" data-slide="13">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 3 · 실전 사례</div>
-    <div class="slide-counter">12 / 15</div>
+    <div class="slide-counter">13 / 16</div>
   </div>
   <div class="slide-hdr"><h2>Gate 프로세스 + MCP 연동 + 실전 쇼케이스</h2></div>
   <div class="slide-body slide-body--cols">
@@ -1096,10 +1179,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S14 통합 실습 워크숍 ── -->
-<div class="slide" data-slide="13">
+<div class="slide" data-slide="14">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Workshop</div>
-    <div class="slide-counter">13 / 15</div>
+    <div class="slide-counter">14 / 16</div>
   </div>
   <div class="slide-hdr"><h2>통합 실습 워크숍 — 5개 시나리오 선택</h2></div>
   <div class="slide-body">
@@ -1142,10 +1225,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S15 보안·거버넌스 ── -->
-<div class="slide" data-slide="14">
+<div class="slide" data-slide="15">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Security &amp; Governance</div>
-    <div class="slide-counter">14 / 15</div>
+    <div class="slide-counter">15 / 16</div>
   </div>
   <div class="slide-hdr"><h2>보안·거버넌스 — 반드시 알아야 할 원칙</h2></div>
   <div class="slide-body">
@@ -1222,10 +1305,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S16 마무리 ── -->
-<div class="slide" data-slide="15">
+<div class="slide" data-slide="16">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Closing</div>
-    <div class="slide-counter">15 / 15</div>
+    <div class="slide-counter">16 / 16</div>
   </div>
   <div class="slide-hdr"><h2>마무리 — 오늘 배운 것과 다음 단계</h2></div>
   <div class="slide-body slide-body--cols">
@@ -1287,7 +1370,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 
 <script>
 (function(){
-  var TOTAL = 15;
+  var TOTAL = 16;
   var cur = 0;
   var deck = document.getElementById('deck');
   var btnPrev = document.getElementById('btnPrev');
