@@ -667,9 +667,14 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         </div>
       </div>
       <div class="lab">
-        <div class="lab__tag">💪 직접 해보기</div>
+        <div class="lab__tag">💪 직접 해보기 — 4단계</div>
         <div class="lab__title">보고서 초안 스킬 만들기</div>
-        <div class="lab__body">Claude 앱 → Skills → 새 스킬 → 이름: <code>weekly-report</code> → 보고서 작성 지침 입력 → 테스트</div>
+        <div class="lab__body">
+          <strong style="color:var(--amber)">①</strong> Claude 앱 → 좌측 <code>Skills</code> 탭 클릭<br>
+          <strong style="color:var(--amber)">②</strong> 새 스킬 생성 → 이름: <code>weekly-report</code><br>
+          <strong style="color:var(--amber)">③</strong> 지침 입력 — 예: "주간 보고서 형식: 완료·진행·예정·이슈 4섹션"<br>
+          <strong style="color:var(--amber)">④</strong> 새 대화에서 "보고서 써줘" 입력 → 스킬 자동 감지 확인
+        </div>
       </div>
     </div>
     <div class="col">
@@ -794,7 +799,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">💡</div>
         <div>
           <div class="info__ttl">앱 Projects와 차이</div>
-          <div class="info__body">파일로 존재 → <strong style="color:var(--blue)">git으로 팀 전체 공유 가능</strong><br>CLAUDE.md 없으면 Claude가 매번 추측으로 기술 선택 → 이 파일이 있으면 일관성 보장</div>
+          <div class="info__body">파일로 존재 → <strong style="color:var(--blue)">git으로 팀 전체 공유 가능</strong><br>CLAUDE.md 없으면 Claude가 매번 추측으로 기술 선택 → 이 파일이 있으면 일관성 보장<br><br><strong style="color:var(--green)">어떻게 시작해요</strong> — 프로젝트 루트에 <code style="font-family:var(--font-mono)">CLAUDE.md</code> 파일 생성 → 기술 스택·금지 항목·팀 컨벤션 작성 → <code style="font-family:var(--font-mono)">git commit</code> → 팀 전체 적용 완료.</div>
         </div>
       </div>
     </div>
@@ -856,6 +861,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
           </tbody>
         </table>
       </div>
+      <div class="tip"><strong>💡 언제 써야 할까요?</strong><br>"저장 후 매번 lint 돌리기", "위험 명령어 전 확인", "작업 완료 시 Slack 알림" — 사람이 반복하는 규칙이 있다면 Hook으로 한 번 설정하면 자동화됩니다. S08 심화 슬라이드에서 실제 설정 코드를 확인하세요.</div>
     </div>
   </div>
 </div>
@@ -875,7 +881,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">⚠️</div>
         <div>
           <div class="info__ttl">Hook이 없으면 어떻게 될까?</div>
-          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--red)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다. Hook = 사람이 자리를 비워도 작동하는 자동 규칙입니다.</div>
+          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--red)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — AI가 코드를 직접 수정·삭제·배포하는 프로젝트에서. 팀 표준 도구(Lint·테스트·알림)를 사람 개입 없이 자동 실행하고 싶을 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 설정 파일 한 번만 작성하면 이후 모든 세션에서 자동 작동합니다. 위험 차단부터 Slack 알림까지 전부 코드로 강제됩니다.</div>
         </div>
       </div>
       <div class="code">
@@ -958,7 +964,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">🤖</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Subagent = "독립 컨텍스트에서 전문 작업을 수행하는 하위 AI"<br>메인 에이전트가 지휘하고, 서브에이전트가 전문 실행합니다.</div>
+          <div class="info__body">Subagent = "독립 컨텍스트에서 전문 작업을 수행하는 하위 AI"<br>메인 에이전트가 지휘하고, 서브에이전트가 전문 실행합니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 리뷰·보안 감사·문서 작성을 동시에 해야 할 때. 또는 작업이 너무 커서 하나의 Claude 컨텍스트로 감당 안 될 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 3개 작업을 순서대로 하면 3배 걸리지만, 서브에이전트 3개가 동시 실행하면 같은 시간에 전부 완료됩니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -1002,12 +1008,12 @@ Agent({ prompt: <span class="c-s">"DB 스키마 분석"</span> })
         <div class="g-card">
           <div class="g-card__icon">⚡</div>
           <div class="g-card__title">병렬 처리</div>
-          <div class="g-card__body">독립 작업은 동시 실행 → 3배 빠른 처리</div>
+          <div class="g-card__body">독립 작업을 동시 실행 → 3배 빠른 처리.<br><em style="color:var(--text-sub)">예: 프론트·백·DB 분석을 한 번에.</em></div>
         </div>
         <div class="g-card">
           <div class="g-card__icon">🔒</div>
           <div class="g-card__title">격리 실행</div>
-          <div class="g-card__body">worktree 모드로 메인 코드 보호</div>
+          <div class="g-card__body">worktree 모드 → 실험 중 실수가 메인 코드에 영향 없음.</div>
         </div>
       </div>
     </div>
@@ -1045,7 +1051,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="info__icon">🔌</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.</div>
+          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 작업 결과를 Slack에 보내거나, GitHub 이슈를 열거나, Google Drive에 파일을 저장하는 것을 Claude가 직접 하길 원할 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — "보고서 완성되면 Slack #팀채널에 올려줘"라고 한 마디하면 Claude가 실제로 Slack에 메시지를 전송합니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -1062,7 +1068,14 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--amber">
         <div class="card-title">scope 3단계</div>
-        <div class="card-body" style="font-size:18px;"><strong style="color:var(--blue)">user</strong> — 내 모든 프로젝트에서 사용<br><strong style="color:var(--blue)">project</strong> — 이 프로젝트 팀 전체 공유<br><strong style="color:var(--blue)">local</strong> — 나만, 이 프로젝트에서만</div>
+        <div class="card-body" style="font-size:16px;">
+          <strong style="color:var(--amber)">user</strong> — 내 모든 프로젝트<br>
+          <span style="font-size:14px;color:var(--text-sub)">예: 개인 Gmail·캘린더 연동</span><br>
+          <strong style="color:var(--amber)">project</strong> — 이 프로젝트 팀 전체 공유<br>
+          <span style="font-size:14px;color:var(--text-sub)">예: 팀 Slack·GitHub 연동</span><br>
+          <strong style="color:var(--amber)">local</strong> — 나만, 이 프로젝트에서만<br>
+          <span style="font-size:14px;color:var(--text-sub)">예: 개인 테스트 DB — 팀에 공유 안 함</span>
+        </div>
       </div>
     </div>
   </div>
