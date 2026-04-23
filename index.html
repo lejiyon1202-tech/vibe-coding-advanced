@@ -114,14 +114,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   overflow:hidden;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
   gap:var(--gap-md);
 }
 .slide-body--cols{
   flex-direction:row;
   gap:var(--gap-lg);
 }
-.col{flex:1;display:flex;flex-direction:column;gap:var(--gap-md);min-width:0;justify-content:space-between;}
+.col{flex:1;display:flex;flex-direction:column;gap:var(--gap-md);min-width:0;}
 
 /* ─── 카드 ─── */
 .card{
@@ -129,6 +128,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   border:1px solid var(--border);
   border-radius:var(--r);
   padding:18px 22px;
+  display:flex;flex-direction:column;
+  box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
 .card--blue{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
 .card--amber{border-color:rgba(180,83,9,0.25);background:var(--amber-soft);}
@@ -139,8 +140,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   font-size:15px;font-weight:700;
   color:var(--blue);margin-bottom:8px;
 }
-.card{box-shadow:0 1px 4px rgba(37,99,235,0.06);}
-.card-body{font-size:18px;line-height:1.7;color:var(--text);}
+.card-body{font-size:18px;line-height:1.7;color:var(--text);flex:1;}
 .card-body em{color:var(--amber);font-style:normal;font-weight:600;}
 
 /* ─── 인포박스 ─── */
@@ -222,7 +222,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .c-cm{color:#64748B;font-style:italic;}.c-hl{color:#B45309;}
 
 /* ─── 그리드 카드 3열 ─── */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);align-items:stretch;}
 .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap-md);align-items:start;}
 .g-card{
   background:var(--bg-card);
@@ -230,10 +230,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   border-radius:var(--r);
   padding:18px 22px;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
+  display:flex;flex-direction:column;
 }
 .g-card__icon{font-size:24px;margin-bottom:10px;}
 .g-card__title{font-family:var(--font-disp);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.g-card__body{font-size:16px;line-height:1.65;color:var(--text-sub);}
+.g-card__body{font-size:16px;line-height:1.65;color:var(--text-sub);flex:1;}
 .g-card--hi{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
 
 /* ─── 흐름 스텝 ─── */
