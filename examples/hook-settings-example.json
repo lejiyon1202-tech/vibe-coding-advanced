@@ -1,0 +1,93 @@
+{
+  "_comment": "Claude Code Hooks 실습 예시 — 바이브 코딩 고급 교육 Part 2",
+  "_description": "이 파일을 .claude/settings.json에 복사해서 사용하세요",
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "_name": "예시 1: 위험 명령어 차단",
+        "_description": "rm -rf, DROP TABLE 등 위험 명령어 실행 전 경고",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '⚠️ Bash 명령어 실행 전 확인 중...' && grep -i 'rm -rf\\|DROP TABLE\\|DELETE FROM' <<< \"$CLAUDE_TOOL_INPUT\" && echo '🔴 위험 명령어 감지! 실행 전 검토 필요' || echo '✅ 안전한 명령어 확인됨'"
+          }
+        ]
+      },
+      {
+        "_name": "예시 2: 파일 수정 전 백업 알림",
+        "_description": "Edit 도구 사용 전 수정 대상 파일 로그 기록",
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] 파일 수정 시작: $CLAUDE_TOOL_INPUT_FILE_PATH\" >> ~/claude-edit-log.txt"
+          }
+        ]
+      }
+    ],
+
+    "PostToolUse": [
+      {
+        "_name": "예시 3: 파일 저장 후 자동 포맷",
+        "_description": "Write 도구 실행 후 자동으로 prettier 실행",
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ 파일 저장 완료. 포맷 검사 실행...' && npx prettier --check \"$CLAUDE_TOOL_INPUT_FILE_PATH\" 2>/dev/null && echo '✅ 포맷 OK' || echo '⚠️ 포맷 이슈 감지 — npx prettier --write 권장'"
+          }
+        ]
+      },
+      {
+        "_name": "예시 4: Bash 실행 후 결과 요약",
+        "_description": "긴 명령어 실행 후 결과를 로그에 기록",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] 명령어 완료\" >> ~/claude-command-log.txt"
+          }
+        ]
+      }
+    ],
+
+    "Stop": [
+      {
+        "_name": "예시 5: 작업 완료 알림 (macOS)",
+        "_description": "Claude Code가 작업 완료 시 시스템 알림 발송",
+        "_note": "macOS 전용. Windows에서는 command를 수정하세요.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code 작업 완료!\" with title \"Claude Code\"' 2>/dev/null || echo '작업 완료'"
+          }
+        ]
+      }
+    ]
+  },
+
+  "_실습_가이드": {
+    "step1": "이 파일을 프로젝트 루트의 .claude/settings.json으로 복사",
+    "step2": "'_comment', '_description', '_name', '_note', '_실습_가이드' 키 제거",
+    "step3": "원하는 훅만 남기고 나머지 삭제",
+    "step4": "claude code 실행 후 훅 동작 확인",
+    "tip": "hook 실행 시 환경변수: CLAUDE_TOOL_NAME, CLAUDE_TOOL_INPUT, CLAUDE_TOOL_RESULT 사용 가능"
+  },
+
+  "_훅_종류_요약": {
+    "PreToolUse": "도구 실행 직전 — 위험 명령어 차단, 로깅",
+    "PostToolUse": "도구 실행 직후 — 자동 포맷, 알림, 검증",
+    "Stop": "Claude 응답 완료 시 — 알림, 보고서 자동 생성",
+    "SubagentStop": "서브에이전트 완료 시 — 서브에이전트 결과 후처리",
+    "PreCompact": "컨텍스트 압축 직전 — 중요 내용 별도 저장"
+  },
+
+  "_핸들러_종류_요약": {
+    "command": "셸 명령어 실행 (가장 많이 사용)",
+    "http": "외부 URL로 POST 요청 — Slack 알림, 웹훅",
+    "prompt": "Claude에게 추가 지시 전달 — 동적 컨텍스트 주입",
+    "agent": "별도 에이전트 실행 — 독립 태스크 처리"
+  }
+}
