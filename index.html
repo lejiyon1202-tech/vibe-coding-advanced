@@ -1322,6 +1322,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 
   /* 키보드 */
   document.addEventListener('keydown',function(e){
+    if(document.querySelector('.lb-overlay.lb-active'))return; /* 라이트박스 열림 시 슬라이드 조작 차단 */
     if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(cur+1);}
     if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(cur-1);}
     if(e.key==='Home'){go(0);}
