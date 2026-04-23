@@ -36,7 +36,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   --font-disp: 'Space Grotesk',sans-serif;
   --font-mono: 'JetBrains Mono',monospace;
   --r:12px;--r-sm:8px;--r-lg:18px;
-  --slide-count:16;
+  --slide-count:15;
 }
 
 /* ─── 슬라이드 덱 ─── */
@@ -109,7 +109,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 /* ─── 슬라이드 바디 ─── */
 .slide-body{
   flex:1;
-  padding:20px 56px 70px;
+  padding:20px 56px 28px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
@@ -314,7 +314,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 }
 .lab__tag{font-family:var(--font-disp);font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;}
 .lab__title{font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;}
-.lab__body{font-size:15px;color:var(--text-sub);line-height:1.65;}
+.lab__body{font-size:16px;color:var(--text-sub);line-height:1.65;}
 .lab__body code{font-family:var(--font-mono);background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;color:var(--blue);}
 
 /* ─── 쇼케이스 ─── */
@@ -348,7 +348,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 .cover-inner{
   flex:1;display:flex;flex-direction:column;
   justify-content:center;
-  padding:40px 80px;
+  padding:24px 80px 16px;
   position:relative;z-index:1;
 }
 .cover-tag{
@@ -451,7 +451,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   font-family:var(--font-mono);font-size:14px;font-weight:500;
   color:var(--blue);margin-bottom:6px;
 }
-.hook-card__desc{font-size:13px;color:var(--text-sub);line-height:1.5;}
+.hook-card__desc{font-size:15px;color:var(--text-sub);line-height:1.5;}
 
 /* ─── 반응형 ─── */
 @media (max-width:768px){
@@ -483,9 +483,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
     <h1 class="cover-h1">Claude 고급 기능<br><span>마스터 클래스</span></h1>
     <p class="cover-sub">Projects · Skills · CLAUDE.md · Hooks · Subagents · MCP<br>오늘 배운 기능 하나로 팀 전체 생산성이 달라집니다.</p>
     <div class="cover-badges">
-      <span class="cover-badge cover-badge--amber">⏱ 8H 전일 과정</span>
-      <span class="cover-badge cover-badge--blue">💪 핸즈온 71.9%</span>
-      <span class="cover-badge">📁 Projects</span>
+<span class="cover-badge">📁 Projects</span>
       <span class="cover-badge">⚡ Skills</span>
       <span class="cover-badge">📄 CLAUDE.md</span>
       <span class="cover-badge">🪝 Hooks</span>
@@ -495,80 +493,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
   </div>
 </div>
 
-<!-- ── S02 오늘의 여정 ── -->
-<div class="slide" data-slide="2">
-  <div class="slide-topbar">
-    <div class="slide-eyebrow">Introduction · 09:00 — 09:30</div>
-    <div class="slide-counter">02 / 16</div>
-  </div>
-  <div class="slide-hdr"><h2>오늘의 여정 (8H)</h2></div>
-  <div class="slide-body slide-body--cols">
-    <div class="col">
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-time">09:00 — 09:30</div>
-          <div><div class="tl-title">Intro — 오늘 배울 것 · 트렌드</div><div class="tl-desc">이론 30분</div></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time">09:30 — 12:00</div>
-          <div><div class="tl-title">Part 1 — 앱 Projects + Skills</div><div class="tl-desc">핸즈온 70%+ · Custom Instructions · Skills 실습</div></div>
-        </div>
-        <div class="tl-item tl-item--faded">
-          <div class="tl-time">12:00 — 13:00</div>
-          <div><div class="tl-title">점심 휴식</div></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time">13:00 — 16:00</div>
-          <div><div class="tl-title">Part 2 — Claude Code CLI 심화</div><div class="tl-desc">CLAUDE.md · Hooks · Subagents · MCP · 핸즈온 70%+</div></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time">16:00 — 16:45</div>
-          <div><div class="tl-title">Part 3 — 실전 사례</div><div class="tl-desc">이론 15분 · <strong style="color:var(--amber)">팀 대화 세션 30분 (참여형)</strong></div></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time">16:45 — 17:30</div>
-          <div><div class="tl-title">통합 실습 워크숍</div><div class="tl-desc">5개 시나리오 선택 · 참여형 100%</div></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time">17:30 — 18:00</div>
-          <div><div class="tl-title">보안·거버넌스 + 마무리</div><div class="tl-desc">이론 30분</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card card--blue">
-        <div class="card-title">참여형 비율</div>
-        <div class="card-body" style="font-size:32px;font-family:var(--font-disp);font-weight:700;color:#fff;margin-bottom:6px;">71.9%</div>
-        <div style="font-size:15px;color:var(--text-sub);">이론·강의 2.25H · 실습·워크숍·토론 5.75H<br>강의 70% 이상 핸즈온 요구 <span class="badge badge--green">✅ 충족</span></div>
-      </div>
-      <div class="info">
-        <div class="info__icon">💡</div>
-        <div>
-          <div class="info__ttl">오늘 두 가지 "프로젝트"를 배웁니다</div>
-          <div class="info__body"><strong style="color:var(--blue)">앱 Projects</strong> — claude.ai GUI, 비개발자도 바로 사용<br><strong style="color:var(--amber)">CLI CLAUDE.md</strong> — 터미널 기반, 코드·자동화 전용</div>
-        </div>
-      </div>
-      <div class="g2">
-        <div class="g-card g-card--hi">
-          <div class="g-card__icon">📁</div>
-          <div class="g-card__title">앱 Projects</div>
-          <div class="g-card__body">GUI 클릭 · 지식 주입<br>팀 공유 · 파일 업로드</div>
-        </div>
-        <div class="g-card">
-          <div class="g-card__icon">💻</div>
-          <div class="g-card__title">CLI 프로젝트</div>
-          <div class="g-card__body">CLAUDE.md 파일<br>git 관리 · 개발자 도구</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ── S03 바이브 코딩 트렌드 ── -->
-<div class="slide" data-slide="3">
+<div class="slide" data-slide="2">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Introduction · 09:00 — 09:30</div>
-    <div class="slide-counter">03 / 16</div>
+    <div class="slide-eyebrow">Introduction</div>
+    <div class="slide-counter">02 / 15</div>
   </div>
   <div class="slide-hdr"><h2>바이브 코딩 2026 — 지금 어디까지 왔나</h2></div>
   <div class="slide-body">
@@ -599,29 +529,28 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
     <div class="g3">
       <div class="card card--blue">
         <div class="card-title">Projects + Skills</div>
-        <div class="card-body" style="font-size:15px;">지식 주입 + 능력 확장 = AI가 우리 팀 스타일로 일함</div>
+        <div class="card-body" style="font-size:18px;">지식 주입 + 능력 확장 = AI가 우리 팀 스타일로 일함</div>
       </div>
       <div class="card">
         <div class="card-title" style="color:var(--amber)">CLAUDE.md + Hooks</div>
-        <div class="card-body" style="font-size:15px;">규칙 코드화 + 자동 실행 = 사람이 개입 없이도 규칙 준수</div>
+        <div class="card-body" style="font-size:18px;">규칙 코드화 + 자동 실행 = 사람이 개입 없이도 규칙 준수</div>
       </div>
       <div class="card">
         <div class="card-title" style="color:var(--green)">Subagents + MCP</div>
-        <div class="card-body" style="font-size:15px;">병렬 처리 + 외부 연동 = AI가 혼자 일하고 보고</div>
+        <div class="card-body" style="font-size:18px;">병렬 처리 + 외부 연동 = AI가 혼자 일하고 보고</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ── S04 Part 1-1: Projects ── -->
-<div class="slide" data-slide="4">
+<div class="slide" data-slide="3">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 1 · 09:30 — 12:00</div>
-    <div class="slide-counter">04 / 16</div>
+    <div class="slide-eyebrow">Part 1</div>
+    <div class="slide-counter">03 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>1-1 Projects — 배경 지식 컨테이너</h2>
-    <div class="time-badge">⏱ 09:30 — 11:00</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -673,14 +602,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 </div>
 
 <!-- ── S05 Part 1-2: Skills ── -->
-<div class="slide" data-slide="5">
+<div class="slide" data-slide="4">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 1 · 09:30 — 12:00</div>
-    <div class="slide-counter">05 / 16</div>
+    <div class="slide-eyebrow">Part 1</div>
+    <div class="slide-counter">04 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>1-2 Skills — 동적 능력 확장 팩</h2>
-    <div class="time-badge">⏱ 11:00 — 12:00</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -713,11 +641,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
       </div>
       <div class="card">
         <div class="card-title">Progressive Disclosure — 3단계 로딩</div>
-        <div class="card-body" style="font-size:15px;">
+        <div class="card-body" style="font-size:18px;">
           <strong style="color:var(--blue)">L1</strong> 이름·설명만 — 항상 로드, 토큰 최소<br>
           <strong style="color:var(--amber)">L2</strong> SKILL.md 전체 — 관련 작업 감지 시<br>
           <strong style="color:#A78BFA)">L3</strong> references/ 파일 — 필요 시만<br>
-          <span style="font-size:13px;color:var(--text-sub)">100개 스킬도 L1만 항상 로드 → 토큰 낭비 없음</span>
+          <span style="font-size:16px;color:var(--text-sub)">100개 스킬도 L1만 항상 로드 → 토큰 낭비 없음</span>
         </div>
       </div>
     </div>
@@ -725,10 +653,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 </div>
 
 <!-- ── S06 Part 1 미니 워크숍 ── -->
-<div class="slide" data-slide="6">
+<div class="slide" data-slide="5">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 1 Workshop · 11:30 — 12:00</div>
-    <div class="slide-counter">06 / 16</div>
+    <div class="slide-eyebrow">Part 1 Workshop</div>
+    <div class="slide-counter">05 / 15</div>
   </div>
   <div class="slide-hdr"><h2>Part 1 미니 워크숍</h2></div>
   <div class="slide-body">
@@ -742,19 +670,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
     <div class="flow">
       <div class="flow-item">
         <div class="flow-num">1</div>
-        <div><div class="flow-ttl">Projects Custom Instructions 완성 (10분)</div><div class="flow-desc">우리 팀 보고서 규칙 + 금지 표현 + 직급·호칭 체계 3가지 섹션</div></div>
+        <div><div class="flow-ttl">Projects Custom Instructions 완성</div><div class="flow-desc">우리 팀 보고서 규칙 + 금지 표현 + 직급·호칭 체계 3가지 섹션</div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">2</div>
-        <div><div class="flow-ttl">Skills 하나 제작 (15분)</div><div class="flow-desc">이름: weekly-report / 주간 보고서 작성 지침 + 양식 포함</div></div>
+        <div><div class="flow-ttl">Skills 하나 제작</div><div class="flow-desc">이름: weekly-report / 주간 보고서 작성 지침 + 양식 포함</div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">3</div>
-        <div><div class="flow-ttl">실제 업무 메모로 테스트 (5분)</div><div class="flow-desc">회의 메모 → Claude에게 붙여넣기 → 보고서 생성 → 비교</div></div>
+        <div><div class="flow-ttl">실제 업무 메모로 테스트</div><div class="flow-desc">회의 메모 → Claude에게 붙여넣기 → 보고서 생성 → 비교</div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">4</div>
-        <div><div class="flow-ttl">2~3명 발표 (10분)</div><div class="flow-desc">"이게 없으면 Claude한테 매번 설명해야 했다" 체험 공유</div></div>
+        <div><div class="flow-ttl">결과 공유</div><div class="flow-desc">"이게 없으면 Claude한테 매번 설명해야 했다" 체험 공유</div></div>
       </div>
     </div>
     <div class="g2">
@@ -765,21 +693,20 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
       </div>
       <div class="card card--green">
         <div class="card-title">오후 예고 — Part 2</div>
-        <div class="card-body" style="font-size:15px;">코드 레벨 자동화<br>CLAUDE.md · Hooks · Subagents · MCP<br>터미널 기반 · 강력한 자동화 도구</div>
+        <div class="card-body" style="font-size:18px;">코드 레벨 자동화<br>CLAUDE.md · Hooks · Subagents · MCP<br>터미널 기반 · 강력한 자동화 도구</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ── S07 Part 2-1: CLAUDE.md ── -->
-<div class="slide" data-slide="7">
+<div class="slide" data-slide="6">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 2 · 13:00 — 16:00</div>
-    <div class="slide-counter">07 / 16</div>
+    <div class="slide-eyebrow">Part 2</div>
+    <div class="slide-counter">06 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>2-1 CLAUDE.md — 프로젝트 영구 지침 파일</h2>
-    <div class="time-badge">⏱ 13:00 — 14:00</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -838,14 +765,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 </div>
 
 <!-- ── S08 Part 2-2+3: CLI Skills + Hooks ── -->
-<div class="slide" data-slide="8">
+<div class="slide" data-slide="7">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 2 · 13:00 — 16:00</div>
-    <div class="slide-counter">08 / 16</div>
+    <div class="slide-eyebrow">Part 2</div>
+    <div class="slide-counter">07 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>2-2 CLI Skills &amp; 2-3 Hooks — 자동화 핵심</h2>
-    <div class="time-badge">⏱ 14:00 — 15:30</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -867,7 +793,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
       </div>
       <div class="card card--blue">
         <div class="card-title">앱 Skills vs CLI Skills 차이</div>
-        <div class="card-body" style="font-size:15px;">CLI Skills는 <code style="font-family:var(--font-mono)">.claude/skills/</code> 폴더에 파일로 존재<br>→ <strong style="color:var(--blue)">git으로 팀 전체에 공유 가능</strong><br>→ 슬래시 명령어 자동 생성 (<code style="font-family:var(--font-mono)">/report-draft</code>)</div>
+        <div class="card-body" style="font-size:18px;">CLI Skills는 <code style="font-family:var(--font-mono)">.claude/skills/</code> 폴더에 파일로 존재<br>→ <strong style="color:var(--blue)">git으로 팀 전체에 공유 가능</strong><br>→ 슬래시 명령어 자동 생성 (<code style="font-family:var(--font-mono)">/report-draft</code>)</div>
       </div>
     </div>
     <div class="col">
@@ -893,14 +819,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060E1F;}
 </div>
 
 <!-- ── S09 Part 2-4: Subagents ── -->
-<div class="slide" data-slide="9">
+<div class="slide" data-slide="8">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 2 · 13:00 — 16:00</div>
-    <div class="slide-counter">09 / 16</div>
+    <div class="slide-eyebrow">Part 2</div>
+    <div class="slide-counter">08 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>2-4 Subagents — 독립 AI 에이전트 위임</h2>
-    <div class="time-badge">⏱ 15:00 — 15:45</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -965,14 +890,13 @@ Agent({ prompt: <span class="c-s">"DB 스키마 분석"</span> })
 </div>
 
 <!-- ── S10 Part 2-5: MCP ── -->
-<div class="slide" data-slide="10">
+<div class="slide" data-slide="9">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 2 · 13:00 — 16:00</div>
-    <div class="slide-counter">10 / 16</div>
+    <div class="slide-eyebrow">Part 2</div>
+    <div class="slide-counter">09 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>2-5 MCP — 외부 서비스 연결 표준 프로토콜</h2>
-    <div class="time-badge">⏱ 15:30 — 16:00</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col">
@@ -1013,21 +937,20 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--amber">
         <div class="card-title">scope 3단계</div>
-        <div class="card-body" style="font-size:15px;"><strong style="color:#fff">user</strong> — 내 모든 프로젝트에서 사용<br><strong style="color:#fff">project</strong> — 이 프로젝트 팀 전체 공유<br><strong style="color:#fff">local</strong> — 나만, 이 프로젝트에서만</div>
+        <div class="card-body" style="font-size:18px;"><strong style="color:#fff">user</strong> — 내 모든 프로젝트에서 사용<br><strong style="color:#fff">project</strong> — 이 프로젝트 팀 전체 공유<br><strong style="color:#fff">local</strong> — 나만, 이 프로젝트에서만</div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ── S11 Part 3: 조직 구조 + 팀 대화 ── -->
-<div class="slide" data-slide="11">
+<div class="slide" data-slide="10">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 3 · 16:00 — 16:45</div>
-    <div class="slide-counter">11 / 16</div>
+    <div class="slide-eyebrow">Part 3</div>
+    <div class="slide-counter">10 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>멀티에이전트 AI 개발 조직 구조</h2>
-    <div class="time-badge">⏱ 16:00 — 16:15</div>
   </div>
   <div class="slide-body slide-body--cols">
     <div class="col" style="flex:1.4;">
@@ -1063,28 +986,27 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S12 Part 3: 팀 대화 세션 ── -->
-<div class="slide" data-slide="12">
+<div class="slide" data-slide="11">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Part 3 · 16:00 — 16:45</div>
-    <div class="slide-counter">12 / 16</div>
+    <div class="slide-eyebrow">Part 3</div>
+    <div class="slide-counter">11 / 15</div>
   </div>
   <div class="slide-hdr">
     <h2>팀 대화 세션 — "우리 조직에 적용한다면?"</h2>
-    <div class="time-badge">⏱ 16:15 — 16:45 · <span style="color:var(--amber)">참여형 30분</span></div>
   </div>
   <div class="slide-body">
     <div class="flow">
       <div class="flow-item">
         <div class="flow-num">1</div>
-        <div><div class="flow-ttl">팀별 토론 — 10분</div><div class="flow-desc">"우리 팀/부서의 반복 업무 중 AI 에이전트로 위임할 수 있는 것 3가지를 꼽는다"</div></div>
+        <div><div class="flow-ttl">팀별 토론</div><div class="flow-desc">"우리 팀/부서의 반복 업무 중 AI 에이전트로 위임할 수 있는 것 3가지를 꼽는다"</div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">2</div>
-        <div><div class="flow-ttl">역할 설계 — 10분</div><div class="flow-desc">각 에이전트의 역할명, 담당 업무, CLAUDE.md에 들어갈 핵심 규칙을 정리한다</div></div>
+        <div><div class="flow-ttl">역할 설계</div><div class="flow-desc">각 에이전트의 역할명, 담당 업무, CLAUDE.md에 들어갈 핵심 규칙을 정리한다</div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">3</div>
-        <div><div class="flow-ttl">팀별 발표 — 10분</div><div class="flow-desc">우리 팀의 멀티에이전트 구조 아이디어 2분 공유</div></div>
+        <div><div class="flow-ttl">팀별 발표</div><div class="flow-desc">우리 팀의 멀티에이전트 구조 아이디어 공유</div></div>
       </div>
     </div>
     <div class="g2">
@@ -1097,7 +1019,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--blue">
         <div class="card-title">CLAUDE.md 계층 실전</div>
-        <div class="card-body" style="font-size:14px;font-family:var(--font-mono);">
+        <div class="card-body" style="font-size:16px;font-family:var(--font-mono);">
           조직루트/CLAUDE.md <span style="color:var(--text-muted)">← 전체 규칙</span><br>
           &nbsp;├─ 총괄팀/CLAUDE.md <span style="color:var(--text-muted)">← 보고 양식</span><br>
           &nbsp;├─ 리서치팀/CLAUDE.md <span style="color:var(--text-muted)">← 신뢰도 체계</span><br>
@@ -1109,10 +1031,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S13 Part 3: Gate + MCP + 쇼케이스 ── -->
-<div class="slide" data-slide="13">
+<div class="slide" data-slide="12">
   <div class="slide-topbar">
     <div class="slide-eyebrow">Part 3 · 실전 사례</div>
-    <div class="slide-counter">13 / 16</div>
+    <div class="slide-counter">12 / 15</div>
   </div>
   <div class="slide-hdr"><h2>Gate 프로세스 + MCP 연동 + 실전 쇼케이스</h2></div>
   <div class="slide-body slide-body--cols">
@@ -1160,10 +1082,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S14 통합 실습 워크숍 ── -->
-<div class="slide" data-slide="14">
+<div class="slide" data-slide="13">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Workshop · 16:45 — 17:30</div>
-    <div class="slide-counter">14 / 16</div>
+    <div class="slide-eyebrow">Workshop</div>
+    <div class="slide-counter">13 / 15</div>
   </div>
   <div class="slide-hdr"><h2>통합 실습 워크숍 — 5개 시나리오 선택</h2></div>
   <div class="slide-body">
@@ -1171,7 +1093,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       <div class="info__icon">🎯</div>
       <div>
         <div class="info__ttl">진행 방식</div>
-        <div class="info__body">시나리오 선택 (5분) → 팀별 실습 (30분) → 결과 발표 (10분, 각 팀 2분) — 완성 못 해도 됩니다. <strong style="color:var(--amber)">"어디까지 만들었나"가 목표입니다.</strong></div>
+        <div class="info__body">시나리오를 선택하고 → 팀별 실습 후 → 결과 발표 — 완성 못 해도 됩니다. <strong style="color:var(--amber)">"어디까지 만들었나"가 목표입니다.</strong></div>
       </div>
     </div>
     <div class="tbl-wrap">
@@ -1195,7 +1117,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--green">
         <div class="card-title">발표 체크포인트</div>
-        <div class="card-body" style="font-size:15px;">
+        <div class="card-body" style="font-size:18px;">
           ✅ 어떤 기능을 사용했나?<br>
           ✅ 실제로 작동했나?<br>
           ✅ 업무에 바로 적용할 수 있나?
@@ -1206,10 +1128,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S15 보안·거버넌스 ── -->
-<div class="slide" data-slide="15">
+<div class="slide" data-slide="14">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Security &amp; Governance · 17:30 — 18:00</div>
-    <div class="slide-counter">15 / 16</div>
+    <div class="slide-eyebrow">Security &amp; Governance</div>
+    <div class="slide-counter">14 / 15</div>
   </div>
   <div class="slide-hdr"><h2>보안·거버넌스 — 반드시 알아야 할 원칙</h2></div>
   <div class="slide-body">
@@ -1286,10 +1208,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 </div>
 
 <!-- ── S16 마무리 ── -->
-<div class="slide" data-slide="16">
+<div class="slide" data-slide="15">
   <div class="slide-topbar">
-    <div class="slide-eyebrow">Closing · 17:30 — 18:00</div>
-    <div class="slide-counter">16 / 16</div>
+    <div class="slide-eyebrow">Closing</div>
+    <div class="slide-counter">15 / 15</div>
   </div>
   <div class="slide-hdr"><h2>마무리 — 오늘 배운 것과 다음 단계</h2></div>
   <div class="slide-body slide-body--cols">
@@ -1321,7 +1243,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="info__icon">📚</div>
         <div>
           <div class="info__ttl">공식 참고 자료</div>
-          <div class="info__body" style="font-family:var(--font-mono);font-size:13px;line-height:1.8;color:var(--text-sub);">
+          <div class="info__body" style="font-family:var(--font-mono);font-size:15px;line-height:1.8;color:var(--text-sub);">
             code.claude.com/docs/en/hooks<br>
             code.claude.com/docs/en/sub-agents<br>
             anthropic.com/engineering/claude-code-best-practices
@@ -1351,7 +1273,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
 
 <script>
 (function(){
-  var TOTAL = 16;
+  var TOTAL = 15;
   var cur = 0;
   var deck = document.getElementById('deck');
   var btnPrev = document.getElementById('btnPrev');
