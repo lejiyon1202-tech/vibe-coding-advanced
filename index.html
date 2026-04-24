@@ -11,27 +11,24 @@
 <style>
 /* ─── 리셋 ─── */
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg,#F8FAFC);}
 
-/* ─── 디자인 토큰 ─── */
+/* ─── 디자인 토큰 — test.pptx S11 라이트 팔레트 ─── */
 :root{
-  --bg:        #EEF2F9;
+  --bg:        #F8FAFC;
   --bg-slide:  #FFFFFF;
-  --bg-card:   rgba(37,99,235,0.04);
-  --bg-card-hi:rgba(37,99,235,0.08);
+  --bg-card:   #EFF6FF;
+  --bg-card-hi:#DBEAFE;
   --text:      #1E293B;
   --text-sub:  #475569;
   --text-muted:#94A3B8;
   --blue:      #2563EB;
-  --blue-soft: rgba(37,99,235,0.08);
-  --amber:     #B45309;
-  --amber-soft:rgba(180,83,9,0.08);
-  --green:     #059669;
-  --green-soft:rgba(5,150,105,0.08);
-  --red:       #DC2626;
-  --red-soft:  rgba(220,38,38,0.08);
-  --border:    rgba(37,99,235,0.15);
-  --border-hi: rgba(37,99,235,0.35);
+  --blue-soft: #EFF6FF;
+  --blue-mid:  #BFDBFE;
+  --slate:     #64748B;
+  --slate-soft:#F1F5F9;
+  --border:    #E2E8F0;
+  --border-hi: #BFDBFE;
   --font-body: 'Pretendard','Noto Sans KR',sans-serif;
   --font-disp: 'Space Grotesk',sans-serif;
   --font-mono: 'JetBrains Mono',monospace;
@@ -73,10 +70,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   font-weight:600;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--amber);
+  color:var(--blue);
   display:flex;align-items:center;gap:8px;
 }
-.slide-eyebrow::before{content:'';width:20px;height:2px;background:var(--amber);border-radius:2px;}
+.slide-eyebrow::before{content:'';width:20px;height:2px;background:var(--blue);border-radius:2px;}
 .slide-counter{
   font-family:var(--font-mono);
   font-size:12px;
@@ -131,17 +128,17 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   display:flex;flex-direction:column;
   box-shadow:0 1px 4px rgba(37,99,235,0.06);
 }
-.card--blue{border-color:rgba(37,99,235,0.25);background:rgba(37,99,235,0.05);}
-.card--amber{border-color:rgba(180,83,9,0.25);background:var(--amber-soft);}
-.card--green{border-color:rgba(5,150,105,0.25);background:var(--green-soft);}
-.card--red{border-color:rgba(220,38,38,0.25);background:var(--red-soft);}
+.card--blue{border-color:var(--border-hi);background:var(--bg-card);}
+.card--amber{border-color:var(--border-hi);background:var(--bg-card);}
+.card--green{border-color:var(--border-hi);background:var(--bg-card);}
+.card--red{border-color:var(--border-hi);background:var(--slate-soft);}
 .card-title{
   font-family:var(--font-disp);
   font-size:15px;font-weight:700;
   color:var(--blue);margin-bottom:8px;
 }
 .card-body{font-size:18px;line-height:1.7;color:var(--text);flex:1;}
-.card-body em{color:var(--amber);font-style:normal;font-weight:600;}
+.card-body em{color:var(--blue);font-style:normal;font-weight:600;}
 
 /* ─── 인포박스 ─── */
 .info{
@@ -154,10 +151,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .info__icon{font-size:20px;line-height:1;flex-shrink:0;margin-top:2px;}
 .info__ttl{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:5px;font-family:var(--font-disp);}
 .info__body{font-size:18px;line-height:1.7;color:var(--text);}
-.info--warn{background:var(--red-soft);border-color:rgba(220,38,38,0.20);}
-.info--warn .info__ttl{color:var(--red);}
-.info--amber{background:var(--amber-soft);border-color:rgba(180,83,9,0.20);}
-.info--amber .info__ttl{color:var(--amber);}
+.info--warn{background:var(--slate-soft);border-color:var(--border);}
+.info--warn .info__ttl{color:var(--slate);}
+.info--amber{background:var(--bg-card);border-color:var(--border-hi);}
+.info--amber .info__ttl{color:var(--blue);}
 
 /* ─── 테이블 ─── */
 .tbl{width:100%;border-collapse:collapse;font-size:16px;}
@@ -185,10 +182,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   font-size:12px;font-weight:700;font-family:var(--font-disp);
   padding:3px 10px;border-radius:20px;
 }
-.badge--blue{background:var(--blue-soft);color:var(--blue);}
-.badge--amber{background:var(--amber-soft);color:var(--amber);}
-.badge--green{background:var(--green-soft);color:var(--green);}
-.badge--red{background:var(--red-soft);color:var(--red);}
+.badge--blue{background:var(--bg-card);color:var(--blue);}
+.badge--amber{background:var(--bg-card);color:var(--blue);}
+.badge--green{background:var(--bg-card);color:var(--blue);}
+.badge--red{background:var(--slate-soft);color:var(--slate);}
 
 /* ─── 코드 블록 ─── */
 .code{
@@ -218,8 +215,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   white-space:pre-wrap;
   word-break:break-all;
 }
-.c-k{color:#1D4ED8;}.c-s{color:#059669;}.c-n{color:#DC2626;}
-.c-cm{color:#64748B;font-style:italic;}.c-hl{color:#B45309;}
+.c-k{color:#1D4ED8;}.c-s{color:#0369A1;}.c-n{color:#475569;}
+.c-cm{color:#94A3B8;font-style:italic;}.c-hl{color:#2563EB;}
 
 /* ─── 그리드 카드 3열 ─── */
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-md);align-items:stretch;}
@@ -261,8 +258,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .part-label{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-disp);font-size:13px;font-weight:700;
-  color:var(--amber);background:var(--amber-soft);
-  border:1px solid rgba(251,191,36,0.25);
+  color:var(--blue);background:var(--bg-card);
+  border:1px solid var(--border-hi);
   border-radius:6px;padding:4px 12px;
 }
 
@@ -296,7 +293,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   background:var(--blue);
   border:2px solid var(--bg-slide);
 }
-.tl-time{font-family:var(--font-mono);font-size:12px;color:var(--amber);font-weight:500;}
+.tl-time{font-family:var(--font-mono);font-size:12px;color:var(--blue);font-weight:500;}
 .tl-title{font-size:15px;font-weight:700;color:var(--text);line-height:1.4;}
 .tl-desc{font-size:13px;color:var(--text-sub);margin-top:3px;}
 .tl-item--faded{opacity:.45;}
@@ -318,15 +315,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 
 /* ─── 실습 박스 ─── */
 .lab{
-  background:var(--amber-soft);
-  border:1px solid rgba(180,83,9,0.20);
+  background:var(--bg-card);
+  border:1px solid var(--border-hi);
   border-radius:var(--r);
   padding:18px 22px;
 }
-.lab__tag{font-family:var(--font-disp);font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;}
+.lab__tag{font-family:var(--font-disp);font-size:12px;font-weight:700;color:var(--blue);margin-bottom:6px;}
 .lab__title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .lab__body{font-size:16px;color:var(--text-sub);line-height:1.65;}
-.lab__body code{font-family:var(--font-mono);background:rgba(37,99,235,0.10);padding:2px 6px;border-radius:4px;color:var(--blue);}
+.lab__body code{font-family:var(--font-mono);background:var(--bg-card-hi);padding:2px 6px;border-radius:4px;color:var(--blue);}
 
 /* ─── 쇼케이스 ─── */
 .showcase{display:flex;flex-direction:column;gap:var(--gap-sm);}
@@ -340,7 +337,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 .showcase-tech{font-size:13px;color:var(--text-sub);}
 
 /* ─── 표지 슬라이드 배경 ─── */
-.slide--cover{background:linear-gradient(135deg,#EEF2F9 0%,#E0EAFF 100%);}
+.slide--cover{background:linear-gradient(135deg,#F8FAFC 0%,#EFF6FF 100%);}
 .slide--cover::before{
   content:'';position:absolute;
   top:-300px;right:-200px;
@@ -352,7 +349,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   content:'';position:absolute;
   bottom:-200px;left:-100px;
   width:600px;height:600px;
-  background:radial-gradient(circle,rgba(180,83,9,.06) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(37,99,235,.05) 0%,transparent 65%);
   pointer-events:none;
 }
 
@@ -365,10 +362,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
 }
 .cover-tag{
   font-family:var(--font-disp);font-size:13px;font-weight:700;
-  color:var(--amber);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--blue);letter-spacing:.08em;text-transform:uppercase;
   display:flex;align-items:center;gap:var(--gap-sm);margin-bottom:28px;
 }
-.cover-tag::before{content:'';width:28px;height:2px;background:var(--amber);}
+.cover-tag::before{content:'';width:28px;height:2px;background:var(--blue);}
 .cover-h1{
   font-family:var(--font-disp);
   font-size:clamp(42px,5.5vw,68px);
@@ -379,7 +376,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   margin-bottom:20px;
 }
 .cover-h1 span{
-  background:linear-gradient(135deg,var(--blue) 0%,var(--amber) 100%);
+  background:linear-gradient(135deg,var(--blue) 0%,#1D4ED8 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
 }
@@ -396,7 +393,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   box-shadow:0 1px 3px rgba(37,99,235,0.08);
 }
 .cover-badge--blue{border-color:rgba(37,99,235,0.30);color:var(--blue);}
-.cover-badge--amber{border-color:rgba(180,83,9,0.30);color:var(--amber);}
+.cover-badge--amber{border-color:rgba(37,99,235,0.20);color:var(--blue);}
 
 /* ─── 네비게이션 버튼 ─── */
 .nav-btn{
@@ -430,7 +427,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   cursor:pointer;transition:all .25s;
 }
 .dot--active{
-  background:var(--amber);
+  background:var(--blue);
   width:22px;border-radius:4px;
 }
 
@@ -441,19 +438,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#EEF2F9;}
   z-index:200;width:100%;
 }
 .prog-fill{
-  height:100%;background:var(--amber);
+  height:100%;background:var(--blue);
   transition:width .4s ease;
 }
 
 /* ─── 학습 포인트 박스 ─── */
 .tip{
-  background:rgba(5,150,105,.06);
-  border:1px solid rgba(5,150,105,.18);
+  background:var(--bg-card);
+  border:1px solid var(--border-hi);
   border-radius:var(--r-sm);
   padding:14px 18px;
   font-size:16px;color:var(--text);line-height:1.7;
 }
-.tip strong{color:var(--green);font-family:var(--font-disp);}
+.tip strong{color:var(--blue);font-family:var(--font-disp);}
 
 /* ─── 핸들러 그리드 (Hooks) ─── */
 .hook-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-sm);}
@@ -548,8 +545,8 @@ details.details-expand .details-body{padding:10px 14px 12px;}
       </div>
       <div class="g-card g-card--hi">
         <div class="g-card__icon">⚡</div>
-        <div class="g-card__title" style="color:var(--amber)">오늘의 바이브 코딩</div>
-        <div class="g-card__body">Projects · Skills · Hooks · Agents · MCP<br>Claude가 <em style="color:var(--amber)">동료 개발자·팀 오케스트레이터</em> 역할<br><br><strong style="color:var(--blue)">→ 오늘 배우는 것!</strong></div>
+        <div class="g-card__title" style="color:var(--blue)">오늘의 바이브 코딩</div>
+        <div class="g-card__body">Projects · Skills · Hooks · Agents · MCP<br>Claude가 <em style="color:var(--blue)">동료 개발자·팀 오케스트레이터</em> 역할<br><br><strong style="color:var(--blue)">→ 오늘 배우는 것!</strong></div>
       </div>
       <div class="g-card">
         <div class="g-card__icon">🚀</div>
@@ -561,7 +558,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
       <div class="info__icon">💡</div>
       <div>
         <div class="info__ttl">리더가 바이브 코딩을 알아야 하는 이유</div>
-        <div class="info__body">팀원들이 이미 쓰고 있습니다. 리더가 먼저 이해해야 팀의 생산성을 올바르게 지휘할 수 있습니다.<br>오늘 배우는 기능들은 개발자만의 도구가 아닌 <strong style="color:var(--amber)">조직 운영 도구</strong>입니다.</div>
+        <div class="info__body">팀원들이 이미 쓰고 있습니다. 리더가 먼저 이해해야 팀의 생산성을 올바르게 지휘할 수 있습니다.<br>오늘 배우는 기능들은 개발자만의 도구가 아닌 <strong style="color:var(--blue)">조직 운영 도구</strong>입니다.</div>
       </div>
     </div>
     <div class="g3">
@@ -570,11 +567,11 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="card-body" style="font-size:18px;">지식 주입 + 능력 확장 = AI가 우리 팀 스타일로 일함</div>
       </div>
       <div class="card">
-        <div class="card-title" style="color:var(--amber)">CLAUDE.md + Hooks</div>
+        <div class="card-title" style="color:var(--blue)">CLAUDE.md + Hooks</div>
         <div class="card-body" style="font-size:18px;">규칙 코드화 + 자동 실행 = 사람이 개입 없이도 규칙 준수</div>
       </div>
       <div class="card">
-        <div class="card-title" style="color:var(--green)">Subagents + MCP</div>
+        <div class="card-title" style="color:var(--blue)">Subagents + MCP</div>
         <div class="card-body" style="font-size:18px;">병렬 처리 + 외부 연동 = AI가 혼자 일하고 보고</div>
       </div>
     </div>
@@ -596,7 +593,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">📁</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Projects = "Claude에게 우리 회사 배경지식을 영구 주입하는 공간"<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 팀마다 보고서 스타일·금지 표현·호칭 체계가 다를 때, 매번 Claude에게 설명하는 게 번거로울 때 설정하세요.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 설정 후에는 "이번 달 보고서 써줘" 한 마디만 해도 팀 스타일(결론 먼저·문장 2줄·번역투 금지)이 자동 반영됩니다.</div>
+          <div class="info__body">Projects = "Claude에게 우리 회사 배경지식을 영구 주입하는 공간"<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 팀마다 보고서 스타일·금지 표현·호칭 체계가 다를 때, 매번 Claude에게 설명하는 게 번거로울 때 설정하세요.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 설정 후에는 "이번 달 보고서 써줘" 한 마디만 해도 팀 스타일(결론 먼저·문장 2줄·번역투 금지)이 자동 반영됩니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -617,10 +614,10 @@ details.details-expand .details-body{padding:10px 14px 12px;}
             <div class="lab__tag">💪 직접 해보기 — 4단계</div>
             <div class="lab__title">내 팀 Custom Instructions 작성</div>
             <div class="lab__body">
-              <strong style="color:var(--amber)">①</strong> <code>claude.ai</code> 접속 → 좌측 <code>Projects</code> 클릭<br>
-              <strong style="color:var(--amber)">②</strong> 새 프로젝트 생성 → <code>Custom Instructions</code> 탭 선택<br>
-              <strong style="color:var(--amber)">③</strong> 우리 팀 규칙 3가지 이상 입력 — 예: "결론 먼저", "문장 2줄 이내", "번역투 금지"<br>
-              <strong style="color:var(--amber)">④</strong> 새 대화에서 "이번 달 보고서 써줘" → 설정 전·후 결과 직접 비교
+              <strong style="color:var(--blue)">①</strong> <code>claude.ai</code> 접속 → 좌측 <code>Projects</code> 클릭<br>
+              <strong style="color:var(--blue)">②</strong> 새 프로젝트 생성 → <code>Custom Instructions</code> 탭 선택<br>
+              <strong style="color:var(--blue)">③</strong> 우리 팀 규칙 3가지 이상 입력 — 예: "결론 먼저", "문장 2줄 이내", "번역투 금지"<br>
+              <strong style="color:var(--blue)">④</strong> 새 대화에서 "이번 달 보고서 써줘" → 설정 전·후 결과 직접 비교
             </div>
           </div>
         </div>
@@ -664,7 +661,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">⚡</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Skills = "특정 업무 전문 능력을 Claude에게 장착시키는 팩"<br>Projects가 지식 DB라면, Skills는 직원 스킬셋입니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — "보고서 써줘", "코드 리뷰해줘" 같은 특정 작업을 반복할 때. 업무별로 스킬 하나씩 만들어두면 됩니다.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 스킬 이름만 언급하면 Claude가 자동으로 전문 모드로 전환. 100개 스킬도 필요한 것만 로드해 토큰 낭비 없음.</div>
+          <div class="info__body">Skills = "특정 업무 전문 능력을 Claude에게 장착시키는 팩"<br>Projects가 지식 DB라면, Skills는 직원 스킬셋입니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — "보고서 써줘", "코드 리뷰해줘" 같은 특정 작업을 반복할 때. 업무별로 스킬 하나씩 만들어두면 됩니다.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 스킬 이름만 언급하면 Claude가 자동으로 전문 모드로 전환. 100개 스킬도 필요한 것만 로드해 토큰 낭비 없음.</div>
         </div>
       </div>
       <div class="g2">
@@ -673,7 +670,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
           <div class="g-card__body">항상 로드 (배경 지식)<br>문서·지침·파일<br>자동 활성화<br>비유: 지식 DB</div>
         </div>
         <div class="g-card">
-          <div class="g-card__title" style="color:var(--amber)">Skills</div>
+          <div class="g-card__title" style="color:var(--blue)">Skills</div>
           <div class="g-card__body">필요 시만 로드<br>지침+스크립트+리소스<br>이름 부여 또는 자동 매칭<br>비유: 스킬셋</div>
         </div>
       </div>
@@ -684,10 +681,10 @@ details.details-expand .details-body{padding:10px 14px 12px;}
             <div class="lab__tag">💪 직접 해보기 — 4단계</div>
             <div class="lab__title">보고서 초안 스킬 만들기</div>
             <div class="lab__body">
-              <strong style="color:var(--amber)">①</strong> Claude 앱 → 좌측 <code>Skills</code> 탭 클릭<br>
-              <strong style="color:var(--amber)">②</strong> 새 스킬 생성 → 이름: <code>weekly-report</code><br>
-              <strong style="color:var(--amber)">③</strong> 지침 입력 — 예: "주간 보고서 형식: 완료·진행·예정·이슈 4섹션"<br>
-              <strong style="color:var(--amber)">④</strong> 새 대화에서 "보고서 써줘" 입력 → 스킬 자동 감지 확인
+              <strong style="color:var(--blue)">①</strong> Claude 앱 → 좌측 <code>Skills</code> 탭 클릭<br>
+              <strong style="color:var(--blue)">②</strong> 새 스킬 생성 → 이름: <code>weekly-report</code><br>
+              <strong style="color:var(--blue)">③</strong> 지침 입력 — 예: "주간 보고서 형식: 완료·진행·예정·이슈 4섹션"<br>
+              <strong style="color:var(--blue)">④</strong> 새 대화에서 "보고서 써줘" 입력 → 스킬 자동 감지 확인
             </div>
           </div>
         </div>
@@ -701,8 +698,8 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="card-title">Progressive Disclosure — 3단계 로딩</div>
         <div class="card-body" style="font-size:18px;">
           <strong style="color:var(--blue)">L1</strong> 이름·설명만 — 항상 로드, 토큰 최소<br>
-          <strong style="color:var(--amber)">L2</strong> SKILL.md 전체 — "보고서 써줘" 감지 시 자동 로드<br>
-          <strong style="color:var(--green)">L3</strong> references/ 파일 — 대용량 참조 파일 필요 시만<br>
+          <strong style="color:var(--blue)">L2</strong> SKILL.md 전체 — "보고서 써줘" 감지 시 자동 로드<br>
+          <strong style="color:var(--blue)">L3</strong> references/ 파일 — 대용량 참조 파일 필요 시만<br>
           <span style="font-size:16px;color:var(--text-sub)">예: "보고서 써줘" 입력 → weekly-report 스킬 L2 로드 → 팀 양식 자동 적용</span>
         </div>
       </div>
@@ -751,8 +748,8 @@ details.details-expand .details-body{padding:10px 14px 12px;}
             <strong>4관점 자가 진단</strong><br>
             ☐ <strong style="color:var(--blue)">WHAT</strong> — Projects와 Skills가 각각 무엇인지 한 줄로 설명할 수 있다<br>
             ☐ <strong style="color:var(--blue)">HOW</strong> — Custom Instructions 작성 + 스킬 생성을 직접 해봤다<br>
-            ☐ <strong style="color:var(--amber)">WHEN</strong> — 언제 Projects를, 언제 Skills를 쓸지 판단할 수 있다<br>
-            ☐ <strong style="color:var(--amber)">VALUE</strong> — 설정 전·후 결과 차이를 직접 비교해서 가치를 체감했다
+            ☐ <strong style="color:var(--blue)">WHEN</strong> — 언제 Projects를, 언제 Skills를 쓸지 판단할 수 있다<br>
+            ☐ <strong style="color:var(--blue)">VALUE</strong> — 설정 전·후 결과 차이를 직접 비교해서 가치를 체감했다
           </div>
         </div>
       </details>
@@ -779,7 +776,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">📄</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">CLAUDE.md = "Claude Code가 프로젝트에서 매 세션 자동으로 읽는 설정 파일"<br>한 번 작성하면 팀 전체에 영구 적용됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 프로젝트에서 "React 쓰지 마라", "커밋 메시지는 한글로", "API 키 하드코딩 절대 금지" 같은 팀 규칙을 Claude가 매번 지키게 하고 싶을 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 기술 스택·코딩 규칙·팀 컨벤션을 이 파일 하나로 고정합니다. git에 커밋하면 팀원 전체가 동일한 규칙의 AI를 갖게 됩니다.</div>
+          <div class="info__body">CLAUDE.md = "Claude Code가 프로젝트에서 매 세션 자동으로 읽는 설정 파일"<br>한 번 작성하면 팀 전체에 영구 적용됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 프로젝트에서 "React 쓰지 마라", "커밋 메시지는 한글로", "API 키 하드코딩 절대 금지" 같은 팀 규칙을 Claude가 매번 지키게 하고 싶을 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 기술 스택·코딩 규칙·팀 컨벤션을 이 파일 하나로 고정합니다. git에 커밋하면 팀원 전체가 동일한 규칙의 AI를 갖게 됩니다.</div>
         </div>
       </div>
       <div class="diagram">
@@ -822,7 +819,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">💡</div>
         <div>
           <div class="info__ttl">앱 Projects와 차이</div>
-          <div class="info__body">파일로 존재 → <strong style="color:var(--blue)">git으로 팀 전체 공유 가능</strong><br>CLAUDE.md 없으면 Claude가 매번 추측으로 기술 선택 → 이 파일이 있으면 일관성 보장<br><br><strong style="color:var(--green)">어떻게 시작해요</strong> — 프로젝트 루트에 <code style="font-family:var(--font-mono)">CLAUDE.md</code> 파일 생성 → 기술 스택·금지 항목·팀 컨벤션 작성 → <code style="font-family:var(--font-mono)">git commit</code> → 팀 전체 적용 완료.</div>
+          <div class="info__body">파일로 존재 → <strong style="color:var(--blue)">git으로 팀 전체 공유 가능</strong><br>CLAUDE.md 없으면 Claude가 매번 추측으로 기술 선택 → 이 파일이 있으면 일관성 보장<br><br><strong style="color:var(--blue)">어떻게 시작해요</strong> — 프로젝트 루트에 <code style="font-family:var(--font-mono)">CLAUDE.md</code> 파일 생성 → 기술 스택·금지 항목·팀 컨벤션 작성 → <code style="font-family:var(--font-mono)">git commit</code> → 팀 전체 적용 완료.</div>
         </div>
       </div>
     </div>
@@ -867,7 +864,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">🪝</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Hook = "Claude의 특정 행동(도구 사용·응답 완료 등)이 발생할 때 자동으로 실행되는 이벤트 리스너"<br><br>사람이 없어도 <strong style="color:var(--amber)">규칙이 자동 실행</strong>됩니다 — 위험 명령어 차단, 저장 후 Lint 자동화, 완료 시 Slack 알림까지 모두 Hook 하나로 설정.</div>
+          <div class="info__body">Hook = "Claude의 특정 행동(도구 사용·응답 완료 등)이 발생할 때 자동으로 실행되는 이벤트 리스너"<br><br>사람이 없어도 <strong style="color:var(--blue)">규칙이 자동 실행</strong>됩니다 — 위험 명령어 차단, 저장 후 Lint 자동화, 완료 시 Slack 알림까지 모두 Hook 하나로 설정.</div>
         </div>
       </div>
       <div class="diagram">
@@ -878,8 +875,8 @@ details.details-expand .details-body{padding:10px 14px 12px;}
           <thead><tr><th>이벤트 타입</th><th>발생 시점</th><th>대표 활용</th></tr></thead>
           <tbody>
             <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">PreToolUse</code></td><td>도구 실행 직전</td><td>위험 명령어 차단·승인 요청</td></tr>
-            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--amber)">PostToolUse</code></td><td>도구 실행 직후</td><td>Lint·테스트 자동 실행</td></tr>
-            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--green)">Stop</code></td><td>Claude 응답 완료</td><td>Slack·Discord 자동 알림</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">PostToolUse</code></td><td>도구 실행 직후</td><td>Lint·테스트 자동 실행</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--slate)">Stop</code></td><td>Claude 응답 완료</td><td>Slack·Discord 자동 알림</td></tr>
             <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--text-sub)">SubagentStop</code></td><td>서브에이전트 완료</td><td>결과 자동 후처리</td></tr>
           </tbody>
         </table>
@@ -909,7 +906,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">⚠️</div>
         <div>
           <div class="info__ttl">Hook이 없으면 어떻게 될까?</div>
-          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--red)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — AI가 코드를 직접 수정·삭제·배포하는 프로젝트에서. 팀 표준 도구(Lint·테스트·알림)를 사람 개입 없이 자동 실행하고 싶을 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 설정 파일 한 번만 작성하면 이후 모든 세션에서 자동 작동합니다. 위험 차단부터 Slack 알림까지 전부 코드로 강제됩니다.</div>
+          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--slate)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — AI가 코드를 직접 수정·삭제·배포하는 프로젝트에서. 팀 표준 도구(Lint·테스트·알림)를 사람 개입 없이 자동 실행하고 싶을 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 설정 파일 한 번만 작성하면 이후 모든 세션에서 자동 작동합니다. 위험 차단부터 Slack 알림까지 전부 코드로 강제됩니다.</div>
         </div>
       </div>
       <div class="code">
@@ -946,8 +943,8 @@ details.details-expand .details-body{padding:10px 14px 12px;}
           <thead><tr><th>핸들러 타입</th><th>하는 일</th><th>대표 활용</th></tr></thead>
           <tbody>
             <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">command</code></td><td>쉘 명령어 실행</td><td>Lint·테스트·파일 로그 기록</td></tr>
-            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--green)">http</code></td><td>URL로 POST 웹훅</td><td>Slack·Discord·Teams 알림</td></tr>
-            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--amber)">prompt</code></td><td>Claude에 추가 지시</td><td>삭제 전 "정말 실행?" 확인</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--slate)">http</code></td><td>URL로 POST 웹훅</td><td>Slack·Discord·Teams 알림</td></tr>
+            <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--blue)">prompt</code></td><td>Claude에 추가 지시</td><td>삭제 전 "정말 실행?" 확인</td></tr>
             <tr><td><code style="font-family:var(--font-mono);font-size:13px;color:var(--text)">agent</code></td><td>서브에이전트 실행</td><td>완료 후 자동 코드 리뷰</td></tr>
           </tbody>
         </table>
@@ -960,9 +957,9 @@ details.details-expand .details-body{padding:10px 14px 12px;}
             <div class="card-body" style="font-family:var(--font-mono);font-size:14px;line-height:1.9;">
               <span style="color:var(--blue)">$CLAUDE_TOOL_NAME</span><br>
               <span style="color:var(--text-sub);font-size:13px;">→ 실행된 도구 이름 (예: Bash, Edit, Write)</span><br>
-              <span style="color:var(--amber)">$CLAUDE_TOOL_INPUT</span><br>
+              <span style="color:var(--blue)">$CLAUDE_TOOL_INPUT</span><br>
               <span style="color:var(--text-sub);font-size:13px;">→ 도구에 전달된 입력값 (명령어 내용 등)</span><br>
-              <span style="color:var(--green)">$CLAUDE_TOOL_RESULT</span><br>
+              <span style="color:var(--blue)">$CLAUDE_TOOL_RESULT</span><br>
               <span style="color:var(--text-sub);font-size:13px;">→ 도구 실행 후 결과값</span>
             </div>
           </div>
@@ -997,7 +994,7 @@ details.details-expand .details-body{padding:10px 14px 12px;}
         <div class="info__icon">🤖</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">Subagent = "독립 컨텍스트에서 전문 작업을 수행하는 하위 AI"<br>메인 에이전트가 지휘하고, 서브에이전트가 전문 실행합니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 리뷰·보안 감사·문서 작성을 동시에 해야 할 때. 또는 작업이 너무 커서 하나의 Claude 컨텍스트로 감당 안 될 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — 3개 작업을 순서대로 하면 3배 걸리지만, 서브에이전트 3개가 동시 실행하면 같은 시간에 전부 완료됩니다.</div>
+          <div class="info__body">Subagent = "독립 컨텍스트에서 전문 작업을 수행하는 하위 AI"<br>메인 에이전트가 지휘하고, 서브에이전트가 전문 실행합니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 코드 리뷰·보안 감사·문서 작성을 동시에 해야 할 때. 또는 작업이 너무 커서 하나의 Claude 컨텍스트로 감당 안 될 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 3개 작업을 순서대로 하면 3배 걸리지만, 서브에이전트 3개가 동시 실행하면 같은 시간에 전부 완료됩니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -1089,7 +1086,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="info__icon">🔌</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 작업 결과를 Slack에 보내거나, GitHub 이슈를 열거나, Google Drive에 파일을 저장하는 것을 Claude가 직접 하길 원할 때.<br><strong style="color:var(--amber)">뭘 할 수 있나요</strong> — "보고서 완성되면 Slack #팀채널에 올려줘"라고 한 마디하면 Claude가 실제로 Slack에 메시지를 전송합니다.</div>
+          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 작업 결과를 Slack에 보내거나, GitHub 이슈를 열거나, Google Drive에 파일을 저장하는 것을 Claude가 직접 하길 원할 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — "보고서 완성되면 Slack #팀채널에 올려줘"라고 한 마디하면 Claude가 실제로 Slack에 메시지를 전송합니다.</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -1107,11 +1104,11 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       <div class="card card--amber">
         <div class="card-title">scope 3단계</div>
         <div class="card-body" style="font-size:16px;">
-          <strong style="color:var(--amber)">user</strong> — 내 모든 프로젝트<br>
+          <strong style="color:var(--blue)">user</strong> — 내 모든 프로젝트<br>
           <span style="font-size:14px;color:var(--text-sub)">예: 개인 Gmail·캘린더 연동</span><br>
-          <strong style="color:var(--amber)">project</strong> — 이 프로젝트 팀 전체 공유<br>
+          <strong style="color:var(--blue)">project</strong> — 이 프로젝트 팀 전체 공유<br>
           <span style="font-size:14px;color:var(--text-sub)">예: 팀 Slack·GitHub 연동</span><br>
-          <strong style="color:var(--amber)">local</strong> — 나만, 이 프로젝트에서만<br>
+          <strong style="color:var(--blue)">local</strong> — 나만, 이 프로젝트에서만<br>
           <span style="font-size:14px;color:var(--text-sub)">예: 개인 테스트 DB — 팀에 공유 안 함</span>
         </div>
       </div>
@@ -1221,7 +1218,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
           <thead><tr><th>단계</th><th>조건</th></tr></thead>
           <tbody>
             <tr><td>합의서 작성</td><td>작업 범위·기준 합의 → 착수</td></tr>
-            <tr><td>이밸류에이터 채점</td><td>합격선 <strong style="color:var(--amber)">95점+</strong> 통과</td></tr>
+            <tr><td>이밸류에이터 채점</td><td>합격선 <strong style="color:var(--blue)">95점+</strong> 통과</td></tr>
             <tr><td>Gate 보고</td><td>총괄 에이전트에게 보고</td></tr>
             <tr><td>최종 컨펌</td><td>컨펌 후에만 다음 Phase</td></tr>
           </tbody>
@@ -1269,7 +1266,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       <div class="info__icon">🎯</div>
       <div>
         <div class="info__ttl">진행 방식</div>
-        <div class="info__body">시나리오를 선택하고 → 직접 만들어보고 → 결과 확인 — 처음부터 완성하지 않아도 됩니다. <strong style="color:var(--amber)">시도하고 진행해보는 것 자체가 학습입니다.</strong></div>
+        <div class="info__body">시나리오를 선택하고 → 직접 만들어보고 → 결과 확인 — 처음부터 완성하지 않아도 됩니다. <strong style="color:var(--blue)">시도하고 진행해보는 것 자체가 학습입니다.</strong></div>
       </div>
     </div>
     <div class="tbl-wrap">
@@ -1314,7 +1311,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
     <div class="info info--warn">
       <div class="info__icon">⚠️</div>
       <div>
-        <div class="info__ttl" style="color:var(--red)">API 키 하드코딩 → GitHub 공개 → 과금 폭탄</div>
+        <div class="info__ttl" style="color:var(--slate)">API 키 하드코딩 → GitHub 공개 → 과금 폭탄</div>
         <div class="info__body">단 한 번의 실수도 용납 안 됩니다. CLAUDE.md에 "API 키 하드코딩 금지" 명시 → Claude가 자동 경고.</div>
       </div>
     </div>
@@ -1411,8 +1408,8 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="card-title">다음 단계 로드맵</div>
         <div class="card-body" style="font-size:16px;line-height:1.8;">
           <strong style="color:var(--blue)">내일</strong> — 오늘 만든 Projects + Skills 실제 업무에 적용<br>
-          <strong style="color:var(--amber)">이번 주</strong> — CLAUDE.md + Hook 하나 추가<br>
-          <strong style="color:var(--green)">이번 달</strong> — Subagent 1개 + MCP 1개 연동 → 팀 전체 공유
+          <strong style="color:var(--blue)">이번 주</strong> — CLAUDE.md + Hook 하나 추가<br>
+          <strong style="color:var(--blue)">이번 달</strong> — Subagent 1개 + MCP 1개 연동 → 팀 전체 공유
         </div>
       </div>
       <div class="info">
