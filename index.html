@@ -989,6 +989,14 @@ details.details-expand .details-body{
       <span class="cover-badge">🤖 Subagents</span>
       <span class="cover-badge">🔌 MCP</span>
     </div>
+    <div style="display:flex;flex-direction:column;gap:8px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.18);border-radius:12px;padding:14px 18px;">
+      <div style="font-family:var(--font-disp);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);">이 강의 후 할 수 있는 것</div>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:16px;color:var(--text2);">
+        <div>① 팀 규칙을 AI에게 코드로 강제할 수 있다</div>
+        <div>② 반복 업무를 Hook · Skills로 자동화할 수 있다</div>
+        <div>③ 여러 AI가 동시에 일하게 조직할 수 있다</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1592,6 +1600,18 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
           <span style="font-size:14px;color:var(--text-sub)">예: 개인 테스트 DB — 팀에 공유 안 함</span>
         </div>
       </div>
+      <details class="details-expand">
+        <summary class="details-summary">✅ 자가 진단 체크 — Part 2 4관점 점검</summary>
+        <div class="details-body">
+          <div class="tip">
+            <strong>4관점 자가 진단</strong><br>
+            ☐ <strong style="color:var(--blue)">WHAT</strong> — CLAUDE.md·Hooks·Subagents·MCP가 각각 무엇인지 한 줄로 설명할 수 있다<br>
+            ☐ <strong style="color:var(--blue)">HOW</strong> — Hooks settings.json 작성·MCP 추가·Subagents 파일 생성을 직접 해봤다<br>
+            ☐ <strong style="color:var(--blue)">WHEN</strong> — 어떤 상황에서 Hook을, 언제 MCP를, 언제 Subagent를 쓸지 판단할 수 있다<br>
+            ☐ <strong style="color:var(--blue)">VALUE</strong> — 이 기능들 없이 같은 업무를 하면 얼마나 더 걸릴지 직접 비교해서 체감했다
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </div>
@@ -1634,6 +1654,20 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
           <div class="info__body">각 역할의 CLAUDE.md에 "직접 보고 금지" 명시<br>→ 보고 체계는 <strong style="color:var(--blue)">코드로 강제</strong>됩니다</div>
         </div>
       </div>
+      <div class="info info--amber">
+        <div class="info__icon">❓</div>
+        <div>
+          <div class="info__ttl">왜 Claude 하나로는 안 될까요?</div>
+          <div class="info__body">컨텍스트 한계(대용량 작업 불가) + 작업자=평가자 시 관대화 필연 → 독립 역할 분리 필요</div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info__icon">🚀</div>
+        <div>
+          <div class="info__ttl">시작 방법 — 3단계 확장</div>
+          <div class="info__body">① 총괄 에이전트 1개 먼저 → ② 전문 역할 추가 → ③ 평가 분리</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1651,7 +1685,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
     <div class="flow">
       <div class="flow-item">
         <div class="flow-num">1</div>
-        <div><div class="flow-ttl">직접 꼽아보기</div><div class="flow-desc">여러분 팀/부서의 반복 업무 중 AI 에이전트로 위임할 수 있는 것 3가지를 스스로 적어보세요.</div></div>
+        <div><div class="flow-ttl">직접 꼽아보기</div><div class="flow-desc">여러분 팀/부서의 반복 업무 중 AI 에이전트로 위임할 수 있는 것 3가지를 스스로 적어보세요.<br><span style="font-size:14px;color:var(--text-sub);">예시 (HR팀): 채용공고 초안 작성봇 — 공고 작성·맞춤법·CLAUDE.md에 복리후생 고정</span></div></div>
       </div>
       <div class="flow-item">
         <div class="flow-num">2</div>
@@ -1765,6 +1799,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       <div class="tip">
         <strong>📌 시나리오 선택 가이드</strong><br>
         <strong>처음이라면</strong> → 시나리오 1 (설치 없이 claude.ai만으로 가능)<br>
+        <span style="font-size:15px;color:var(--text-sub);">시작: claude.ai 접속 → 좌측 Projects 클릭 → 새 프로젝트 생성</span><br>
         <strong>개발 경험 있다면</strong> → 시나리오 2·3·5 도전<br>
         완성하지 못해도 됩니다. "어디까지 만들었나"가 중요합니다.
       </div>
