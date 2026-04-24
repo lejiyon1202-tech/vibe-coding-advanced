@@ -1370,7 +1370,7 @@ details.details-expand .details-body{
         <div class="info__icon">⚠️</div>
         <div>
           <div class="info__ttl">Hook이 없으면 어떻게 될까?</div>
-          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--slate)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트 하나만 달면 실행 전에 자동 차단됩니다.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — AI가 코드를 직접 수정·삭제·배포하는 프로젝트에서. 팀 표준 도구(Lint·테스트·알림)를 사람 개입 없이 자동 실행하고 싶을 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 설정 파일 한 번만 작성하면 이후 모든 세션에서 자동 작동합니다. 위험 차단부터 Slack 알림까지 전부 코드로 강제됩니다.</div>
+          <div class="info__body">Claude가 실수로 <code style="font-family:var(--font-mono);color:var(--slate)">rm -rf /</code>를 실행해도 막을 방법이 없습니다. PreToolUse Hook에 위험 패턴 감지 스크립트를 달고 <code style="font-family:var(--font-mono);color:var(--blue)">exit 2</code>를 반환하면 실행 전에 실제로 차단됩니다 (exit 0 = 허용, exit 1 ≠ 차단 — Unix 관례와 다름).<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — AI가 코드를 직접 수정·삭제·배포하는 프로젝트에서. 팀 표준 도구(Lint·테스트·알림)를 사람 개입 없이 자동 실행하고 싶을 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — 설정 파일 한 번만 작성하면 이후 모든 세션에서 자동 작동합니다. 위험 차단부터 Slack 알림까지 전부 코드로 강제됩니다.</div>
         </div>
       </div>
       <div class="code">
@@ -1383,7 +1383,7 @@ details.details-expand .details-body{
     <span class="c-s">"matcher"</span>: <span class="c-s">"Bash"</span>,
     <span class="c-s">"hooks"</span>: [{
       <span class="c-s">"type"</span>: <span class="c-s">"command"</span>,
-      <span class="c-s">"command"</span>: <span class="c-s">"echo $CLAUDE_TOOL_INPUT | grep -i 'rm -rf' &amp;&amp; echo '🔴 위험 명령어 감지!' || true"</span>
+      <span class="c-s">"command"</span>: <span class="c-s">"echo $CLAUDE_TOOL_INPUT | grep -qi 'rm -rf' &amp;&amp; exit 2 || exit 0"</span>
     }]
   }],
   <span class="c-s">"Stop"</span>: [{
@@ -1424,7 +1424,9 @@ details.details-expand .details-body{
               <span style="color:var(--blue)">$CLAUDE_TOOL_INPUT</span><br>
               <span style="color:var(--text-sub);font-size:13px;">→ 도구에 전달된 입력값 (명령어 내용 등)</span><br>
               <span style="color:var(--blue)">$CLAUDE_TOOL_RESULT</span><br>
-              <span style="color:var(--text-sub);font-size:13px;">→ 도구 실행 후 결과값</span>
+              <span style="color:var(--text-sub);font-size:13px;">→ 도구 실행 후 결과값</span><br>
+              <span style="color:var(--blue);font-size:13px;display:block;margin-top:6px;border-top:1px solid rgba(100,116,139,0.2);padding-top:6px;">exit 0 = 허용 · <strong>exit 2 = 차단</strong></span><br>
+              <span style="color:var(--text-sub);font-size:12px;">※ exit 1 ≠ 차단 (Unix 관례와 다름, 공식 문서 기준)</span>
             </div>
           </div>
         </div>
@@ -1484,6 +1486,20 @@ details.details-expand .details-body{
       </details>
     </div>
     <div class="col">
+      <div class="code">
+        <div class="code__hdr">
+          <div class="code__dots"><div class="code__dot"></div><div class="code__dot"></div><div class="code__dot"></div></div>
+          <span class="code__file">.claude/agents/code-reviewer.md — 정의 파일 구조</span>
+        </div>
+        <div class="code__body"><pre>---
+description: <span class="c-s">보안·코드 품질 검토 전담 에이전트</span>
+tools: <span class="c-k">[Read, Grep, Glob]</span>      <span class="c-cm">← 필요한 도구만</span>
+model: <span class="c-s">claude-haiku-4-5-20251001</span>  <span class="c-cm">← 비용 절감 가능</span>
+---
+<span class="c-cm"># 코드 리뷰 지침</span>
+보안 취약점(XSS·SQL 인젝션)을 최우선으로 확인합니다.</pre>
+        </div>
+      </div>
       <div class="code">
         <div class="code__hdr">
           <div class="code__dots"><div class="code__dot"></div><div class="code__dot"></div><div class="code__dot"></div></div>
@@ -1550,7 +1566,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="info__icon">🔌</div>
         <div>
           <div class="info__ttl">한 줄 정의</div>
-          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 작업 결과를 Slack에 보내거나, GitHub 이슈를 열거나, Google Drive에 파일을 저장하는 것을 Claude가 직접 하길 원할 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — "보고서 완성되면 Slack #팀채널에 올려줘"라고 한 마디하면 Claude가 실제로 Slack에 메시지를 전송합니다.</div>
+          <div class="info__body">MCP = "Claude Code가 외부 서비스와 통신하는 표준 프로토콜"<br>3,000+ 서버 생태계 — 이미 만들어진 연동을 바로 사용.<br><br><strong style="color:var(--blue)">어떨 때 써요</strong> — 작업 결과를 Slack에 보내거나, GitHub 이슈를 열거나, Google Drive에 파일을 저장하는 것을 Claude가 직접 하길 원할 때.<br><strong style="color:var(--blue)">뭘 할 수 있나요</strong> — "보고서 완성되면 Slack #팀채널에 올려줘"라고 한 마디하면 Claude가 실제로 Slack에 메시지를 전송합니다.<br><strong style="color:var(--blue)">서버 탐색</strong> — <code style="font-family:var(--font-mono)">mcp.so</code> · Anthropic 공식 MCP hub에서 3,000+ 서버 검색 가능</div>
         </div>
       </div>
       <div class="tbl-wrap">
@@ -1883,6 +1899,8 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
           <div class="info__body" style="font-family:var(--font-mono);font-size:16px;line-height:1.8;color:var(--text-sub);">
             code.claude.com/docs/en/hooks<br>
             code.claude.com/docs/en/sub-agents<br>
+            code.claude.com/docs/en/skills<br>
+            code.claude.com/docs/en/sdk/subagents<br>
             anthropic.com/engineering/claude-code-best-practices
           </div>
         </div>
