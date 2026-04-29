@@ -21,6 +21,7 @@
   --blue-strong:#1D4ED8;
   --slate:#64748B;
   --text-sub:var(--slate);
+  --text-muted:#94A3B8;
   --border:#D6E0EF;
   --bhi:rgba(37,99,235,.18);
   --cover:#F0F6FF;
@@ -558,7 +559,7 @@ details.details-expand{
 }
 
 .tl-title{
-  font-size:16px;
+  font-size:14px;
   font-weight:700;
   line-height:1.4;
   color:var(--text);
@@ -587,7 +588,7 @@ details.details-expand{
 .sec-card__list li{
   position:relative;
   padding:3px 0 3px 14px;
-  font-size:16px;
+  font-size:13px;
 }
 
 .sec-card__list li::before{
@@ -1013,7 +1014,7 @@ details.details-expand .details-body{
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.18);border-radius:12px;padding:14px 18px;">
       <div style="font-family:var(--font-disp);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);">이 강의 후 할 수 있는 것</div>
-      <div style="display:flex;flex-direction:column;gap:4px;font-size:16px;color:var(--text2);">
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--text2);">
         <div>① 팀 규칙을 AI에게 코드로 강제할 수 있다</div>
         <div>② 반복 업무를 Hook · Skills로 자동화할 수 있다</div>
         <div>③ 여러 AI가 동시에 일하게 조직할 수 있다</div>
@@ -1061,15 +1062,15 @@ details.details-expand .details-body{
     <div class="g3">
       <div class="card card--blue">
         <div class="card-title">Projects + Skills</div>
-        <div class="card-body" style="font-size:18px;">지식 주입 + 능력 확장 = AI가 우리 팀 스타일로 일함</div>
+        <div class="card-body">지식 주입 + 능력 확장 = AI가 우리 팀 스타일로 일함</div>
       </div>
       <div class="card">
         <div class="card-title" style="color:var(--blue)">CLAUDE.md + Hooks</div>
-        <div class="card-body" style="font-size:18px;">규칙 코드화 + 자동 실행 = 사람이 개입 없이도 규칙 준수</div>
+        <div class="card-body">규칙 코드화 + 자동 실행 = 사람이 개입 없이도 규칙 준수</div>
       </div>
       <div class="card">
         <div class="card-title" style="color:var(--blue)">Subagents + MCP</div>
-        <div class="card-body" style="font-size:18px;">병렬 처리 + 외부 연동 = AI가 혼자 일하고 보고</div>
+        <div class="card-body">병렬 처리 + 외부 연동 = AI가 혼자 일하고 보고</div>
       </div>
     </div>
   </div>
@@ -1193,11 +1194,11 @@ details.details-expand .details-body{
       </div>
       <div class="card">
         <div class="card-title">Progressive Disclosure — 3단계 로딩</div>
-        <div class="card-body" style="font-size:18px;">
+        <div class="card-body">
           <strong style="color:var(--blue)">L1</strong> 이름·설명만 — 항상 로드, 토큰 최소<br>
           <strong style="color:var(--blue)">L2</strong> SKILL.md 전체 — "보고서 써줘" 감지 시 자동 로드<br>
           <strong style="color:var(--blue)">L3</strong> references/ 파일 — 대용량 참조 파일 필요 시만<br>
-          <span style="font-size:16px;color:var(--text-sub)">예: "보고서 써줘" 입력 → weekly-report 스킬 L2 로드 → 팀 양식 자동 적용</span>
+          <span style="color:var(--text-sub)">예: "보고서 써줘" 입력 → weekly-report 스킬 L2 로드 → 팀 양식 자동 적용</span>
         </div>
       </div>
     </div>
@@ -1252,7 +1253,7 @@ details.details-expand .details-body{
       </details>
       <div class="card card--green">
         <div class="card-title">다음 파트 — Part 2</div>
-        <div class="card-body" style="font-size:18px;">코드 레벨 자동화<br>CLAUDE.md · Hooks · Subagents · MCP<br>터미널 기반 · 강력한 자동화 도구</div>
+        <div class="card-body">코드 레벨 자동화<br>CLAUDE.md · Hooks · Subagents · MCP<br>터미널 기반 · 강력한 자동화 도구</div>
       </div>
     </div>
   </div>
@@ -1268,7 +1269,7 @@ details.details-expand .details-body{
     <h2>2-1 CLAUDE.md — 프로젝트 영구 지침 파일</h2>
   </div>
   <div class="slide-body slide-body--cols">
-    <div class="info" style="grid-column:1/-1;margin-bottom:14px;padding:10px 16px;">
+    <div class="info" style="flex-basis:100%;margin-bottom:4px;">
       <div class="info__icon">📊</div>
       <div>
         <div class="info__ttl">학습 수준 위계 — CLAUDE.md</div>
@@ -1340,7 +1341,7 @@ details.details-expand .details-body{
     <h2>2-2 CLI Skills &amp; 2-3 Hooks — 자동화 핵심</h2>
   </div>
   <div class="slide-body slide-body--cols">
-    <div class="info" style="grid-column:1/-1;margin-bottom:14px;padding:10px 16px;">
+    <div class="info" style="flex-basis:100%;margin-bottom:4px;">
       <div class="info__icon">📊</div>
       <div>
         <div class="info__ttl">학습 수준 위계 — Skills · Hooks</div>
@@ -1366,7 +1367,7 @@ details.details-expand .details-body{
       </div>
       <div class="card card--blue">
         <div class="card-title">앱 Skills vs CLI Skills 차이</div>
-        <div class="card-body" style="font-size:18px;">CLI Skills는 <code style="font-family:var(--font-mono)">.claude/skills/</code> 폴더에 파일로 존재<br>→ <strong style="color:var(--blue)">git으로 팀 전체에 공유 가능</strong><br>→ 슬래시 명령어 자동 생성 (<code style="font-family:var(--font-mono)">/report-draft</code>)</div>
+        <div class="card-body">CLI Skills는 <code style="font-family:var(--font-mono)">.claude/skills/</code> 폴더에 파일로 존재<br>→ <strong style="color:var(--blue)">git으로 팀 전체에 공유 가능</strong><br>→ 슬래시 명령어 자동 생성 (<code style="font-family:var(--font-mono)">/report-draft</code>)</div>
       </div>
     </div>
     <div class="col">
@@ -1465,7 +1466,7 @@ details.details-expand .details-body{
         <div class="details-body">
           <div class="card card--blue">
             <div class="card-title">Hook에서 사용 가능한 환경 변수</div>
-            <div class="card-body" style="font-family:var(--font-mono);font-size:16px;line-height:1.9;">
+            <div class="card-body" style="font-family:var(--font-mono);line-height:1.9;">
               <span style="color:var(--blue)">$CLAUDE_TOOL_NAME</span><br>
               <span style="color:var(--text-sub);font-size:13px;">→ 실행된 도구 이름 (예: Bash, Edit, Write)</span><br>
               <span style="color:var(--blue)">$CLAUDE_TOOL_INPUT</span><br>
@@ -1502,7 +1503,7 @@ details.details-expand .details-body{
     <h2>2-4 Subagents — 독립 AI 에이전트 위임</h2>
   </div>
   <div class="slide-body slide-body--cols">
-    <div class="info" style="grid-column:1/-1;margin-bottom:14px;padding:10px 16px;">
+    <div class="info" style="flex-basis:100%;margin-bottom:4px;">
       <div class="info__icon">📊</div>
       <div>
         <div class="info__ttl">학습 수준 위계 — Subagents</div>
@@ -1590,7 +1591,7 @@ Agent({ prompt: <span class="c-s">"강사 만족도 분석"</span> })
     <h2>2-5 MCP — 외부 서비스 연결 표준 프로토콜</h2>
   </div>
   <div class="slide-body slide-body--cols">
-    <div class="info" style="grid-column:1/-1;margin-bottom:14px;padding:10px 16px;">
+    <div class="info" style="flex-basis:100%;margin-bottom:4px;">
       <div class="info__icon">📊</div>
       <div>
         <div class="info__ttl">학습 수준 위계 — MCP</div>
@@ -1635,11 +1636,11 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--amber">
         <div class="card-title">scope 3단계</div>
-        <div class="card-body" style="font-size:16px;">
+        <div class="card-body">
           <strong style="color:var(--blue)">user</strong> — 내 모든 프로젝트<br>
-          <span style="font-size:14px;color:var(--text-sub)">예: 개인 Gmail·캘린더 연동</span><br>
+          <span style="color:var(--text-sub)">예: 개인 Gmail·캘린더 연동</span><br>
           <strong style="color:var(--blue)">project</strong> — 이 프로젝트 팀 전체 공유<br>
-          <span style="font-size:14px;color:var(--text-sub)">예: 팀 Slack·GitHub 연동</span><br>
+          <span style="color:var(--text-sub)">예: 팀 Slack·GitHub 연동</span><br>
           <strong style="color:var(--blue)">local</strong> — 나만, 이 프로젝트에서만<br>
           <span style="font-size:14px;color:var(--text-sub)">예: 개인 테스트 DB — 팀에 공유 안 함</span>
         </div>
@@ -1670,7 +1671,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
     <h2>멀티에이전트 AI 업무 조직 구조</h2>
   </div>
   <div class="slide-body slide-body--cols">
-    <div class="info" style="grid-column:1/-1;margin-bottom:14px;padding:10px 16px;">
+    <div class="info" style="flex-basis:100%;margin-bottom:4px;">
       <div class="info__icon">📊</div>
       <div>
         <div class="info__ttl">학습 수준 위계 — AI 업무 조직 구조</div>
@@ -1760,7 +1761,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--blue">
         <div class="card-title">CLAUDE.md 계층 실전</div>
-        <div class="card-body" style="font-size:16px;font-family:var(--font-mono);">
+        <div class="card-body" style="font-family:var(--font-mono);">
           조직루트/CLAUDE.md <span style="color:var(--text-muted)">← 전체 규칙</span><br>
           &nbsp;├─ 총괄팀/CLAUDE.md <span style="color:var(--text-muted)">← 보고 양식</span><br>
           &nbsp;├─ 리서치팀/CLAUDE.md <span style="color:var(--text-muted)">← 신뢰도 체계</span><br>
@@ -1859,7 +1860,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
       </div>
       <div class="card card--green">
         <div class="card-title">완료 체크포인트</div>
-        <div class="card-body" style="font-size:18px;">
+        <div class="card-body">
           ✅ 어떤 기능을 사용했나?<br>
           ✅ 실제로 작동했나?<br>
           ✅ 업무에 바로 적용할 수 있나?
@@ -2123,7 +2124,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
     <div class="col">
       <div class="card card--blue">
         <div class="card-title">다음 단계 로드맵</div>
-        <div class="card-body" style="font-size:16px;line-height:1.8;">
+        <div class="card-body" style="line-height:1.8;">
           <strong style="color:var(--blue)">내일</strong> — 오늘 만든 Projects + Skills 실제 업무에 적용<br>
           <strong style="color:var(--blue)">이번 주</strong> — CLAUDE.md + Hook 하나 추가<br>
           <strong style="color:var(--blue)">이번 달</strong> — Subagent 1개 + MCP 1개 연동 → 팀 전체 공유
@@ -2133,7 +2134,7 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
         <div class="info__icon">📚</div>
         <div>
           <div class="info__ttl">공식 참고 자료</div>
-          <div class="info__body" style="font-family:var(--font-mono);font-size:16px;line-height:1.8;color:var(--text-sub);">
+          <div class="info__body" style="font-family:var(--font-mono);line-height:1.8;color:var(--text-sub);">
             code.claude.com/docs/en/hooks<br>
             code.claude.com/docs/en/sub-agents<br>
             code.claude.com/docs/en/skills<br>
@@ -2142,10 +2143,10 @@ claude mcp add <span class="c-k">discord</span> --scope <span class="c-s">projec
           </div>
         </div>
       </div>
-      <div class="card" style="text-align:center;padding:28px;">
-        <div style="font-size:36px;margin-bottom:8px;">🎯</div>
-        <div style="font-family:var(--font-disp);font-size:20px;font-weight:700;color:var(--text);margin-bottom:6px;">학습 마무리</div>
-        <div style="font-size:16px;color:var(--text-sub);">오늘 배운 기능 하나를 내일 실제 업무에 적용해보세요</div>
+      <div class="card" style="text-align:center;padding:14px;">
+        <div style="font-size:24px;margin-bottom:6px;">🎯</div>
+        <div style="font-family:var(--font-disp);font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;">학습 마무리</div>
+        <div style="color:var(--text-sub);">오늘 배운 기능 하나를 내일 실제 업무에 적용해보세요</div>
       </div>
     </div>
   </div>
